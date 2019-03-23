@@ -23,6 +23,7 @@ public class menuImplemented {
       }
       
       public static void startMenu(){
+            //option 1 - register and create user login credentials
             String userFirstName, userLastName;
             System.out.println("Hello, first-timer. \nPlease register your login credentials below. \n\nEnter your first name: ");
             userFirstName = scan1.nextLine();
@@ -52,7 +53,7 @@ public class menuImplemented {
                           "\n Username: " + username + "\nPassword: " + password);
             }
       
-      
+            //option 2 login directly, can only be chosen if user has registered all the above credentials first
       }
       
       
