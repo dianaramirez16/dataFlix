@@ -112,7 +112,7 @@ public class menuImplemented {
             } else return null;
       }
       
-      //
+      /*
       public String checkGenre(String subjecttemp){
             String validated;
             String Horror = "Horror";
@@ -125,15 +125,15 @@ public class menuImplemented {
             int animeCounter;
             
             
-            /* this will reference the array the movies are stored in *************
+             this will reference the array the movies are stored in *************
             for (int i=0; i<movieList.length(); i++) {
             
             }
             //this will iterate through the counters and increment counters
-            return most watched genre cast as a string */
+            return most watched genre cast as a string
             return validated;
       }
-      
+      */
       
       
 }
