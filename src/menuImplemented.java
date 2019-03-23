@@ -23,7 +23,14 @@ public class menuImplemented {
       }
       
       public static void startMenu(){
-            System.out.println("Hello, first-timer. \nPlease register your login credentials. \n\nUsername MUST contain at least one digit (0-9).\nEnter username:");
+            String userFirstName, userLastName;
+            System.out.println("Hello, first-timer. \nPlease register your login credentials below. \n\nEnter your first name: ");
+            userFirstName = scan1.nextLine();
+      
+            System.out.println("Enter your last name: ");
+            userLastName = scan1.nextLine();
+            
+            System.out.println("Username MUST contain at least one digit (0-9).\nEnter username:");
             username = scan1.nextLine();
       
             System.out.println("Choose a password. It must contain at least one special character (! @ # $ % ^ & * or ?) \nEnter password:");
