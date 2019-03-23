@@ -84,8 +84,24 @@ public class menuImplemented {
       
       public static void createMovies(){
             //create array initialized to hold all these movies
-            CreateMovie movie1 = new CreateMovie("Get Out", 2017, 144, "Horror/Mystery", 7.7);
-            CreateMovie movie2 = new CreateMovie("Spirited Away", 2001, );
+            CreateMovie movie1 = new CreateMovie("Get Out", 2017, 104, "Horror", 7.7);
+            CreateMovie movie2 = new CreateMovie("Spirited Away", 2001, 125, "Anime", 8.6);
+            CreateMovie movie3 = new CreateMovie("Legally Blonde", 2001, 96, "Comedy", 6.3);
+            CreateMovie movie4 = new CreateMovie("The Addams Family", 1991, 99, "Comedy", 6.9);
+            CreateMovie movie5 = new CreateMovie("Pikachu's Vacation", 1998, 23, "Anime", 5.8);
+            CreateMovie movie6 = new CreateMovie("A Quiet Place", 2018, 90, "Horror", 7.6);
+            CreateMovie movie7 = new CreateMovie("The Grudge", 2004, 91, "Horror", 5.9);
+            CreateMovie movie8 = new CreateMovie("The Silence of the Lambs", 1991, 118, "Horror", 8.6);
+            CreateMovie movie9 = new CreateMovie("Let the Right One In", 2008, 114, "Horror", 7.9);
+            CreateMovie movie10 = new CreateMovie("Anastasia", 1997, 94, "Anime", 7.1);
+            CreateMovie movie11 = new CreateMovie("Ratatouille", 2007, 111, "Anime", 8.0);
+            CreateMovie movie12 = new CreateMovie("Kiki's Delivery Service", 1989, 103, "Anime", 7.9);
+            CreateMovie movie13 = new CreateMovie("50 First Dates", 2004, 99, "Comedy", 6.8 );
+            CreateMovie movie14 = new CreateMovie("Ace Ventura: Pet Detective", 1994, 86, "Comedy", 6.9);
+            CreateMovie movie15 = new CreateMovie("Wonder Woman", 2017, 141, "Action", 7.5 );
+            CreateMovie movie16 = new CreateMovie("Aquaman", 2018, 143, "Action", 7.2);
+            CreateMovie movie17 = new CreateMovie("Deadpool", 2016, 108, "Action", 8.0);
+            CreateMovie movie18 = new CreateMovie("The Fifth Element", 1997, 126, "Action", 7.7 );
       }
       
       public static String formatMovieDuration(int minutes) {
