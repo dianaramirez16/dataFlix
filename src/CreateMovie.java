@@ -5,13 +5,13 @@ public class CreateMovie { //CAPITALIZE ***
       
       private String MOVIE_TITLE="";
       private int MOVIE_RELEASE_YEAR =0;
-      private int MOVIE_DURATION =0;
+      private String MOVIE_DURATION ="";
       private String MOVIE_GENRE="";
       private double MOVIE_RATING=0.0;
       
       
       //movie constructor
-      public CreateMovie(String movieTitle, int movieYear, int movieDuration, String movieGenre, double movieRating) {
+      public CreateMovie(String movieTitle, int movieYear, String movieDuration, String movieGenre, double movieRating) {
             this.MOVIE_TITLE = movieTitle;
             this.MOVIE_RELEASE_YEAR = movieYear;
             this.MOVIE_DURATION= movieDuration;
