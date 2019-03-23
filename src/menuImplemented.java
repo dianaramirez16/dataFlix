@@ -17,25 +17,31 @@ public class menuImplemented {
       public static void main(String[] args) {
             
             createMovies();
+           
+            startMenu();
             
+      }
+      
+      public static void startMenu(){
             System.out.println("Hello, first-timer. Please register your login credentials. Username MUST contain at least one digit (0-9).\nEnter username:");
             username = scan1.nextLine();
-            
+      
             System.out.println("Choose a password. It must contain at least one special character (! @ # $ % ^ & * or ?) \nEnter password:");
             password = scan1.nextLine();
+      
             registerUser(username, password);
-            
+      
+            //loop to verify login credentials, will need to figure out exit condition and effect
             int countLogins=0;
             boolean loginMethodReturn;
             do {
                   loginMethodReturn = loginUser(username, password);
                   countLogins++;
             } while ((loginMethodReturn == false) && countLogins<3);
-            
-           
-            //startMenu();
-            
+      
+      
       }
+      
       
       //method for user to login after setting credentials
       public static boolean loginUser(String username, String password) {
