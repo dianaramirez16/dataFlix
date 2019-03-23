@@ -67,8 +67,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/menuImplemented.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="571">
-              <caret line="135" column="8" lean-forward="true" selection-start-line="135" selection-start-column="8" selection-end-line="135" selection-end-column="8" />
+            <state relative-caret-position="588">
+              <caret line="137" column="13" selection-start-line="137" selection-start-column="13" selection-end-line="137" selection-end-column="13" />
               <folding>
                 <element signature="e#0#4769#0" expanded="true" />
               </folding>
@@ -139,7 +139,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553330097499" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553330218043" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
@@ -260,8 +260,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/menuImplemented.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="571">
-          <caret line="135" column="8" lean-forward="true" selection-start-line="135" selection-start-column="8" selection-end-line="135" selection-end-column="8" />
+        <state relative-caret-position="588">
+          <caret line="137" column="13" selection-start-line="137" selection-start-column="13" selection-end-line="137" selection-end-column="13" />
           <folding>
             <element signature="e#0#4769#0" expanded="true" />
           </folding>

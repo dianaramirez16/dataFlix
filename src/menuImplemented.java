@@ -12,10 +12,11 @@
  */
 import java.util.*;
 public class menuImplemented {
+      static Scanner scan1 = new Scanner(System.in); //global scanner
       public static void main(String[] args) {
             String username, password;
             createMovies();
-            Scanner scan1 = new Scanner(System.in);
+            
             System.out.println("Hello, first-timer. Please register your login credentials. Username MUST contain at least one digit (0-9).\nEnter username:");
             username = scan1.nextLine();
             
@@ -35,18 +36,18 @@ public class menuImplemented {
             
             //have user log in
             //startMenu();
-            //scan1.close();
+            
       }
       
       //method for user to login after setting credentials
       public static boolean loginUser(String username, String password) {
-            Scanner scan2 = new Scanner(System.in);
+            
             boolean loggedIn;
             System.out.println("Please login. Enter your username:");
-            String login = scan2.next();
+            String login = scan1.next();
             
             System.out.println("Enter your password:");
-            String loginpass = scan2.next();
+            String loginpass = scan1.next();
             
             loggedIn = ((login.equals(username)) && (loginpass.equals(password)) ? true: false);
             
@@ -56,7 +57,7 @@ public class menuImplemented {
                   System.out.println("The credentials were not entered correctly, please try again.");
             }
             
-            //scan2.close();
+            
             return loggedIn;
       }
       
@@ -133,6 +134,8 @@ public class menuImplemented {
             return most watched genre cast as a string
             return validated;
       }
+      
+      //scan1.close();
       */
       
       
