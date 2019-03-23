@@ -45,12 +45,12 @@ public class menuImplemented {
             do {
                   loginMethodReturn = loginUser(username, password);
                   countLogins++;
-            } while ((loginMethodReturn == false) && countLogins<3);
+            } while ((loginMethodReturn == false) && countLogins<2);
             if (countLogins==3){
-                  username = "tempUser1";
-                  password = "tempPassword#";
+                  username = userLastName+"1";
+                  password = userFirstName+"*";
                   System.out.println("Due to too many failed attempts, you have been logged in using temporary credentials. Please see below:" +
-                          "\n Username: " + username + "\nPassword: " + password);
+                          "\nUsername: " + username + "\nPassword: " + password);
             }
       
             //option 2 login directly, can only be chosen if user has registered all the above credentials first
