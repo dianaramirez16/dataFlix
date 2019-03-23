@@ -28,7 +28,7 @@ public class CreateMovie { //CAPITALIZE ***
             return MOVIE_RELEASE_YEAR;
       }
       
-      public int getMovieDuration () {
+      public String getMovieDuration () {
             return MOVIE_DURATION;
       }
       
@@ -49,7 +49,7 @@ public class CreateMovie { //CAPITALIZE ***
             MOVIE_RELEASE_YEAR = movieReleaseYear;
       }
       
-      public void setMovieDuration (int movieDuration) {
+      public void setMovieDuration (String movieDuration) {
             MOVIE_DURATION = movieDuration;
       }
       
