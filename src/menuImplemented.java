@@ -84,21 +84,35 @@ public class menuImplemented {
       
       public static void createMovies(){
             //create array initialized to hold all these movies
-            createMovie movie1 = new createMovie("Get Out", 2017, 144, "Horror/Mystery", 7.7);
-            createMovie movie2 = new createMovie();
+            CreateMovie movie1 = new CreateMovie("Get Out", 2017, 144, "Horror/Mystery", 7.7);
+            CreateMovie movie2 = new CreateMovie("Spirited Away", 2001, );
       }
+      
+      public static String formatMovieDuration(int minutes) {
+            String time;
+            if (minutes>60){
+                  time = minutes/60 + "h " + minutes%60 + "m";
+                  return time;
+            } else return null;
+      }
+      
       //
       public String checkGenre(){
-            String horror = "Horror";
-            String comedy = "Comedy";
+            String Horror = "Horror";
+            String Comedy = "Comedy";
+            String Action = "Action";
+            String Anime = "Anime";
             int horrorCounter;
             int comedyCounter;
+            int actionCounter;
+            int animeCounter;
             
+            /* this will reference the array the movies are stored in *************
             for (int i=0; i<movieList.length(); i++) {
             
             }
             //this will iterate through the counters and increment counters
-            //return most watched genre cast as a string
+            return most watched genre cast as a string */
       }
       
 }
