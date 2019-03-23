@@ -23,7 +23,7 @@ public class menuImplemented {
       }
       
       public static void startMenu(){
-            System.out.println("Hello, first-timer. Please register your login credentials. Username MUST contain at least one digit (0-9).\nEnter username:");
+            System.out.println("Hello, first-timer. \nPlease register your login credentials. \n\nUsername MUST contain at least one digit (0-9).\nEnter username:");
             username = scan1.nextLine();
       
             System.out.println("Choose a password. It must contain at least one special character (! @ # $ % ^ & * or ?) \nEnter password:");
@@ -38,6 +38,12 @@ public class menuImplemented {
                   loginMethodReturn = loginUser(username, password);
                   countLogins++;
             } while ((loginMethodReturn == false) && countLogins<3);
+            if (countLogins==3){
+                  username = "tempUser1";
+                  password = "tempPassword#";
+                  System.out.println("Due to too many failed attempts, you have been logged in using temporary credentials. Please see below:" +
+                          "\n Username: " + username + "\nPassword: " + password);
+            }
       
       
       }
