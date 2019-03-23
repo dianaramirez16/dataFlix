@@ -13,8 +13,9 @@
 import java.util.*;
 public class menuImplemented {
       static Scanner scan1 = new Scanner(System.in); //global scanner
+      static String username, password;
       public static void main(String[] args) {
-            String username, password;
+            
             createMovies();
             
             System.out.println("Hello, first-timer. Please register your login credentials. Username MUST contain at least one digit (0-9).\nEnter username:");
@@ -31,10 +32,7 @@ public class menuImplemented {
                   countLogins++;
             } while ((loginMethodReturn == false) && countLogins<3);
             
-            
-            //create login procedure method
-            
-            //have user log in
+           
             //startMenu();
             
       }
@@ -64,6 +62,7 @@ public class menuImplemented {
       
       //method to register new user login credentials.
       public static boolean registerUser(String username, String password) {
+            
             boolean valid = ((username.contains("1")) || (username.contains("2")) ||
                     (username.contains("3")) || (username.contains("4")) ||
                     (username.contains("5")) || (username.contains("6")) ||

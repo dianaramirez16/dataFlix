@@ -67,8 +67,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/menuImplemented.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="588">
-              <caret line="137" column="13" selection-start-line="137" selection-start-column="13" selection-end-line="137" selection-end-column="13" />
+            <state relative-caret-position="714">
+              <caret line="42" column="29" lean-forward="true" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
               <folding>
                 <element signature="e#0#4769#0" expanded="true" />
               </folding>
@@ -89,6 +89,7 @@
   <component name="FindInProjectRecents">
     <replaceStrings>
       <replace>movieDuration</replace>
+      <replace>loginPass</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -107,9 +108,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="742" />
+    <option name="x" value="441" />
     <option name="y" value="-2" />
-    <option name="width" value="1184" />
+    <option name="width" value="1485" />
     <option name="height" value="1006" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -139,7 +140,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553330218043" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553330433948" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
@@ -168,7 +169,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="742" y="-2" width="1184" height="1006" extended-state="0" />
+    <frame x="441" y="-2" width="1485" height="1006" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.15755053" />
@@ -260,8 +261,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/menuImplemented.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="137" column="13" selection-start-line="137" selection-start-column="13" selection-end-line="137" selection-end-column="13" />
+        <state relative-caret-position="714">
+          <caret line="42" column="29" lean-forward="true" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
           <folding>
             <element signature="e#0#4769#0" expanded="true" />
           </folding>
