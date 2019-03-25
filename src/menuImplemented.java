@@ -16,10 +16,11 @@ public class menuImplemented {
       static Random random = new Random();
       static Scanner scan1 = new Scanner(System.in); //global scanner
       static String username, password;
-      static CreateMovie[] myMovieArray;
+      static CreateMovie[] myMovieArray; //holds movie objects
       static ArrayStack arrayStack; //stack
       static CircularQueue circularQueue; //queue
       static int countUsers=0;
+      static String credentialsArray[] = new String[20];
       
       public static void main(String[] args) {
             
@@ -94,7 +95,6 @@ public class menuImplemented {
             password = scan1.nextLine();
             
             if (checkCredentials(username,password,userLastName)) {  //if credentials are valid, store in array
-                  String credentialsArray[] = new String[20];
                   while (countUsers==0) {
                         credentialsArray[0] = userFirstName;
                         credentialsArray[1] = userLastName;
@@ -153,7 +153,7 @@ public class menuImplemented {
                   password = "password!";
                   System.out.println("\nDue to too many failed attempts, you have been logged in using temporary credentials. Please see below:" +
                           "\nUsername: " + username + "\nPassword: " + password);
-                        loginUser(username, password);
+                        //loginUser(username, password);
             } else {
             System.out.println("Thank you. \nYour login credentials are set. your username: "+username + "your password: " + password);
                   System.out.println("\nYou may now log in.");
@@ -162,37 +162,20 @@ public class menuImplemented {
             return valid;
       }
       
+      /*
       
-      public static boolean loginUser(String username, String password) {
-            System.out.println("Login below");
-            System.out.println("Please enter your username:");
-            String loginU = scan1.nextLine();
-            System.out.println("Enter your password:");
-            String loginPass = scan1.nextLine();
-            
+      public static void loginUser(String username, String password) {
             int countLogins=0;
             boolean loggedIn ;
-                  
-                  /* possibilities for logging in:
-                  1. login successfully, should proceed to rest of menu
-                  2. login incorrectly, given 2 more attempts
-                  3. login incorrectly, past 2 attempts, random pass should be generated
-                  */
             
+            if (credentialsArray.contains()) {
             
-            do {
-                  loggedIn = ((loginU.equals(username)) && (loginPass.equals(password)));
-                  countLogins++;
-                  
-            } while ((loggedIn == false) && countLogins<2);
-            
-            if (loggedIn) {
-                  System.out.println("You are now logged in.");
             }
+            
             
             return loggedIn;
       }
-      
+      */
       
       
       //String movieTitle, int movieYear, int movieDuration, String movieGenre, double movieRating
