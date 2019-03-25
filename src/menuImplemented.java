@@ -93,7 +93,7 @@ public class menuImplemented {
                   do {
                         loggedIn = ((loginU.equals(username)) && (loginPass.equals(password)));
             
-                        countLogins++;
+                        countLoginAttempts++;
                   } while ((loggedIn == false) && countLoginAttempts<2);
       
       
