@@ -52,8 +52,7 @@ public class menuImplemented {
                         System.out.println("You do not have access to this feature until you are registered.");
                   }
                   
-                  System.out.print("You must login before you can access options 3-9." +
-                          "\n1. Register account" +
+                  System.out.print("1. Register account" +
                           "\n2. Login " +
                           "\n3. Watch a movie" +
                           "\n4. View Complete Watch History" + //first in first out, lists movies chronologicall order
@@ -80,9 +79,8 @@ public class menuImplemented {
       
       public static void collectCredentials(){
             String userFirstName, userLastName;
-            
-            //scan1.nextLine();  //prepares scanner for next input
-            System.out.println("Please register your login credentials below. \n\nEnter your first name: ");
+            scan1.nextLine();  //prepares scanner for next input
+            System.out.println("Please register your login credentials below. \nEnter your first name: ");
             userFirstName = scan1.nextLine();
       
             System.out.println("Enter your last name: ");
@@ -143,20 +141,23 @@ public class menuImplemented {
                   System.out.println("Your username does not fulfill the requirements. It must be unique and contain a digit 1-9. Please try again.");
                   valid=false;
                   countAttempts++;
+                  System.out.println(countAttempts);
             } else if (validPassword==false) {
                   System.out.println("Your password does not fulfill the requirements. It must be longer than 8 characters and contain a special character, such as ! or @.");
                   valid=false;
                   countAttempts++;
+                  System.out.println(countAttempts);
             } else if (valid=false && countAttempts==3) { //creates temp variables, not stored in array
                   int randomN = random.nextInt(999999) + 0;
                   username = userLastName+randomN;
                   password = "password!";
+                  System.out.println(countAttempts);
                   System.out.println("\nDue to too many failed attempts, you have been logged in using temporary credentials. Please see below:" +
                           "\nUsername: " + username + "\nPassword: " + password);
                         //loginUser(username, password);
             } else {
-            System.out.println("Thank you. \nYour login credentials are set. your username: "+username + "your password: " + password);
-                  System.out.println("\nYou may now log in.");
+            System.out.println("Thank you. \nYour login credentials are set. username: "+username + "\t password: " + password);
+                  System.out.println("\nYou may now log in.");   System.out.println(countAttempts);
                   valid=true;
             }
             return valid;
