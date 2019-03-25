@@ -104,7 +104,7 @@ public class menuImplemented {
             
             
       }
-      public static int collectCredentials(){
+      public static void collectCredentials(){
             String userFirstName, userLastName;
             
             //scan1.nextLine();  //prepares scanner for next input
@@ -120,33 +120,36 @@ public class menuImplemented {
             System.out.println("Choose a password. It must contain at least one special character (! @ # $ % ^ & * or ?) \nEnter password:");
             password = scan1.nextLine();
             
-            String credentialsArray[] = new String[20];
-            while (countUsers==0) {
-                  credentialsArray[0] = userFirstName;
-                  credentialsArray[1] = userLastName;
-                  credentialsArray[2] = username;
-                  credentialsArray[3] = password;
-                  countUsers++;
-            } if (countUsers==1) {
-                  credentialsArray[4] = userFirstName;
-                  credentialsArray[5] = userLastName;
-                  credentialsArray[6] = username;
-                  credentialsArray[7] = password;
-                  countUsers++;
-            } if (countUsers==2) {
-                  credentialsArray[8] = userFirstName;
-                  credentialsArray[9] = userLastName;
-                  credentialsArray[10] = username;
-                  credentialsArray[11] = password;
-                  countUsers++;
-            } if (countUsers==3) {
-                  credentialsArray[12] = userFirstName;
-                  credentialsArray[13] = userLastName;
-                  credentialsArray[14] = username;
-                  credentialsArray[15] = password;
-                  countUsers++;
+            if (checkCredentials(username,password)) {  //if credentials are valid, store in array
+                  String credentialsArray[] = new String[20];
+                  while (countUsers==0) {
+                        credentialsArray[0] = userFirstName;
+                        credentialsArray[1] = userLastName;
+                        credentialsArray[2] = username;
+                        credentialsArray[3] = password;
+                        countUsers++;
+                  } if (countUsers==1) {
+                        credentialsArray[4] = userFirstName;
+                        credentialsArray[5] = userLastName;
+                        credentialsArray[6] = username;
+                        credentialsArray[7] = password;
+                        countUsers++;
+                  } if (countUsers==2) {
+                        credentialsArray[8] = userFirstName;
+                        credentialsArray[9] = userLastName;
+                        credentialsArray[10] = username;
+                        credentialsArray[11] = password;
+                        countUsers++;
+                  } if (countUsers==3) {
+                        credentialsArray[12] = userFirstName;
+                        credentialsArray[13] = userLastName;
+                        credentialsArray[14] = username;
+                        credentialsArray[15] = password;
+                        countUsers++;
+                  }
+            } else {
+                  collectCredentials();
             }
-            return countUsers;
       }
       
       public static boolean loginUser(String username, String password, int countLogins) {
