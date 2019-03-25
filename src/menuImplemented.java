@@ -90,17 +90,21 @@ public class menuImplemented {
                   //loop to verify login credentials
                   int countLoginAttempts=0;
                   boolean loggedIn ;
+                  /* possibilities for logging in:
+                  1. login successfully, should proceed to rest of menu
+                  2. login incorrectly, given 2 more attempts
+                  3. login incorrectly, past 2 attempts, random pass should be generated
+                  */
+                  
+                  
                   do {
                         loggedIn = ((loginU.equals(username)) && (loginPass.equals(password)));
-            
                         countLoginAttempts++;
+                        
                   } while ((loggedIn == false) && countLoginAttempts<2);
-      
-      
+                  
                   if (loggedIn) {
                         System.out.println("You are now logged in.");
-                  } else {
-                        System.out.println("The credentials were not entered correctly, please try again.");
                   }
                   
             
