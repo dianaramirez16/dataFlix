@@ -109,7 +109,7 @@ public class menuImplemented {
             System.out.println("Choose a password. It must contain at least one special character (! @ # $ % ^ & * or ?) \nEnter password:");
             password = scan1.nextLine();
             
-            if (checkCredentials(username,password)) {  //if credentials are valid, store in array
+            if (checkCredentials(username,password,userLastName)) {  //if credentials are valid, store in array
                   String credentialsArray[] = new String[20];
                   while (countUsers==0) {
                         credentialsArray[0] = userFirstName;
@@ -193,16 +193,14 @@ public class menuImplemented {
                   System.out.println("Your password does not fulfill the requirements. It must be longer than 8 characters and contain a special character, such as ! or @.");
                   valid=false;
                   countAttempts++;
-            } else if (valid=false && countAttempts==3) {
+            } else if (valid=false && countAttempts==3) { //creates temp variables, not stored in array
                   int randomN = random.nextInt(999999) + 0;
                   username = userLastName+randomN;
                   password = "password!";
                   System.out.println("\nDue to too many failed attempts, you have been logged in using temporary credentials. Please see below:" +
                           "\nUsername: " + username + "\nPassword: " + password);
-                  //
                   
             } else {
-      
             System.out.println("Thank you. \nYour login credentials are set. your username: "+username + "your password: " + password);
                   System.out.println("\nYou may now log in.");
                   valid=true;

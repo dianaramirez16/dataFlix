@@ -70,8 +70,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/menuImplemented.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="197" column="50" lean-forward="true" selection-start-line="197" selection-start-column="50" selection-end-line="197" selection-end-column="50" />
+            <state relative-caret-position="423">
+              <caret line="195" column="103" selection-start-line="195" selection-start-column="103" selection-end-line="195" selection-end-column="103" />
               <folding>
                 <element signature="e#0#9975#0" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -140,7 +140,7 @@
     <panes />
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553501803456" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553502227563" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
@@ -267,8 +267,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/menuImplemented.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="197" column="50" lean-forward="true" selection-start-line="197" selection-start-column="50" selection-end-line="197" selection-end-column="50" />
+        <state relative-caret-position="423">
+          <caret line="195" column="103" selection-start-line="195" selection-start-column="103" selection-end-line="195" selection-end-column="103" />
           <folding>
             <element signature="e#0#9975#0" expanded="true" />
             <element signature="imports" expanded="true" />
