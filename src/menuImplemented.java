@@ -14,10 +14,14 @@ import java.util.*;
 public class menuImplemented {
       static Scanner scan1 = new Scanner(System.in); //global scanner
       static String username, password;
+      static CreateMovie[] myMovieArray;
+      static ArrayStack arrayStack; //stack
+      static CircularQueue circularQueue; //queue
+      
+      
       public static void main(String[] args) {
             
             createMovies();
-            
             startMenu();
             
       }
@@ -37,51 +41,57 @@ public class menuImplemented {
             System.out.println("Choose a password. It must contain at least one special character (! @ # $ % ^ & * or ?) \nEnter password:");
             password = scan1.nextLine();
             
-            registerUser(username, password);
+            int countRegistering =0;
+            boolean valid = registerUser(username, password,countRegistering); //has true or false value based on whether their credentials were accepted
             
-            //loop to verify login credentials, will need to figure out exit condition and effect
-            int countLogins=0;
-            boolean loginMethodReturn;
-            do {
-                  loginMethodReturn = loginUser(username, password);
-                  countLogins++;
-            } while ((loginMethodReturn == false) && countLogins<2);
-            if (countLogins==3){
+            
+            while(valid==false && countRegistering<2) {
+                  System.out.println("Please login. Enter your username:");
+                  String login = scan1.next();
+                  
+                  System.out.println("Enter your password:");
+                  String loginpass = scan1.next();
+                  valid = registerUser(login, loginpass, countRegistering);
+                  countRegistering++;
+            }
+            if (valid) {
+                  System.out.println("you are now logged in.");
+                  
+            } else { //executes after 3 wrong tries
                   username = userLastName+"1";
                   password = userFirstName+"*";
-                  System.out.println("Due to too many failed attempts, you have been logged in using temporary credentials. Please see below:" +
+                  System.out.println("\nDue to too many failed attempts, you have been logged in using temporary credentials. Please see below:" +
                           "\nUsername: " + username + "\nPassword: " + password);
             }
             
-            //option 2 login directly, can only be chosen if user has registered all the above credentials first
-      }
-      
-      
-      //method for user to login after setting credentials
-      public static boolean loginUser(String username, String password) {
-            
-            boolean loggedIn;
+            /*option 2---login
             System.out.println("Please login. Enter your username:");
             String login = scan1.next();
             
             System.out.println("Enter your password:");
             String loginpass = scan1.next();
             
-            loggedIn = ((login.equals(username)) && (loginpass.equals(password)) ? true: false);
+      
+            //loop to verify login credentials, will need to figure out exit condition and effect
+            int countLogins=0;
+            boolean loggedIn ;
+            do {
+                  loggedIn = ((login.equals(username)) && (loginpass.equals(password)));
+                  
+                  countLogins++;
+            } while ((loggedIn == false) && countLogins<2);
+            
             
             if (loggedIn) {
                   System.out.println("You are now logged in.");
             } else {
                   System.out.println("The credentials were not entered correctly, please try again.");
             }
-            
-            
-            return loggedIn;
+            */
       }
       
-      
       //method to register new user login credentials.
-      public static boolean registerUser(String username, String password) {
+      public static boolean registerUser(String username, String password, int countReg) {
             
             boolean valid = ((username.contains("1")) || (username.contains("2")) ||
                     (username.contains("3")) || (username.contains("4")) ||
@@ -94,13 +104,14 @@ public class menuImplemented {
             
             if (valid) {
                   System.out.println("Thank you. \nYour login credentials are set: \nYour username: "+username + "\nYour password: " + password);
-            } else {
+            } else if (countReg<1) {
                   System.out.println("Invalid! Your username must contain a number 1-9" +
                           " and your password must contain at least 1 special character: !@#$%^& or *. Please try again.");
             }
             return valid;
       }
       //String movieTitle, int movieYear, int movieDuration, String movieGenre, double movieRating
+      
       
       public static void createMovies(){
             //create array initialized to hold all these movies
@@ -122,7 +133,38 @@ public class menuImplemented {
             CreateMovie movie16 = new CreateMovie("Aquaman", 2018, formatMovieDuration(143), "Action", 7.2);
             CreateMovie movie17 = new CreateMovie("Deadpool", 2016, formatMovieDuration(108), "Action", 8.0);
             CreateMovie movie18 = new CreateMovie("The Fifth Element", 1997, formatMovieDuration(126), "Action", 7.7 );
+            myMovieArray = new CreateMovie[] {movie1, movie2, movie3, movie4, movie5, movie6, movie7, movie8, movie9, movie10, movie11, movie12, movie13, movie14, movie15, movie16, movie17, movie18};
       }
+      
+      public static String watchMovie(){
+            //user will pick int from 1-18 (array holds 0-17)
+            System.out.println("Pick a movie between 1-18: ");
+            for (int i = 0; i<18; i++ ){  //prints array
+                  String s = i + "" + (myMovieArray[i].getMovieTitle()) + "\n";
+                  System.out.println(s);
+                  //
+            }
+            
+            int moviePicked = scan1.nextInt();
+            arrayStack.push(myMovieArray[moviePicked-1]); //adds to stack
+            circularQueue.offer((myMovieArray[moviePicked-1]));  //adds to queue
+            
+            return "You have watched: " + myMovieArray[moviePicked-1].getMovieTitle();
+            
+      }
+      
+      public printStack {
+            for (int i = arrayStack.TOS; i>0; i-- ){
+                  String s = i + "" + (myMovieArray[i].getMovieTitle()) + "\n";
+                  System.out.println(s);
+                  //
+            }
+      }
+      
+      public printQueue {
+      
+      }
+      
       
       public static String formatMovieDuration(int minutes) {
             String time;

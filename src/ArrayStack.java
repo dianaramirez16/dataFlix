@@ -1,13 +1,12 @@
 
-
-public class ArrayStack <E> {
+public class ArrayStack {
       
       // Storage for the Stack
       
       private CreateMovie movie; //creates local reference to movie objs
       private CreateMovie[] movieList; //creates local movieLIst array
-      private int TOS;	// Indicates nothing is there initially
-      private static final int INITIAL_CAPACITY = 5;
+      public int TOS;	// Indicates nothing is there initially
+      private static final int INITIAL_CAPACITY = 20;
       
       // Default constructor to create Stack
       public void ArrayStack() {
@@ -39,7 +38,9 @@ public class ArrayStack <E> {
 			TOS--;						// Then decrement the TOS
 			return temp;				// Then return the element
 			 */
-                  return this.movieList[TOS--];
+                  CreateMovie temp = movieList[TOS--];
+                  TOS--;
+                  return temp;
             }
             else {
                   System.out.println("Stack Underflow..!!");

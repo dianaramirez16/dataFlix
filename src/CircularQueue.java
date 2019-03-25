@@ -1,3 +1,4 @@
+
 // Author: Diana Ramirez
 // Queue implementation using circular array
 
@@ -10,8 +11,8 @@ public class CircularQueue { //creates queue from circular array
       private int front;      //front of queue
       private int rear;	    //rear of queue
       private int size;       //number of elements in the queue
-      private int capacity;   //max elements in queue
-      private final int DEFAULT_CAPACITY=5; // default cap
+      private int capacity;   //max elements queue can hold
+      private final int DEFAULT_CAPACITY=20; // default cap
       
       //default constructor creates the queue
       public void circularQueue() {
