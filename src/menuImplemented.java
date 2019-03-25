@@ -43,10 +43,10 @@ public class menuImplemented {
                         
                   if (optionToRegister==1) {
                         String userFirstName, userLastName;
-                        scan1.nextLine();
+                        scan1.nextLine();  //prepares scanner for next input
                         System.out.println("Please register your login credentials below. \n\nEnter your first name: ");
                         userFirstName = scan1.nextLine();
-                        //scan1.nextLine(); //prepares scanner for next input
+                        
                         System.out.println("Enter your last name: ");
                         userLastName = scan1.nextLine();
             
@@ -62,10 +62,9 @@ public class menuImplemented {
             
                         while(valid==false && countRegistering<2) {
                               System.out.println("Please login. Enter your username:");
-                              String login = scan1.next();
-                  
+                              String login = scan1.nextLine();
                               System.out.println("Enter your password:");
-                              String loginpass = scan1.next();
+                              String loginpass = scan1.nextLine();
                               valid = registerUser(login, loginpass, countRegistering);
                               countRegistering++;
                         }
@@ -78,49 +77,69 @@ public class menuImplemented {
                               System.out.println("\nDue to too many failed attempts, you have been logged in using temporary credentials. Please see below:" +
                                       "\nUsername: " + username + "\nPassword: " + password);
                         }
+                        
                   } else { //if option 1 is not entered
                         System.out.println("You do not have access to this feature until you are registered.");
                   }
+                  //prompts login menu again
+                  //
+      
+                  System.out.print("You must login before you can access options 3-9." +
+                          "\n1. Register account" +
+                          "\n2. Login " +
+                          "\n3. Watch a movie" +
+                          "\n4. View Complete Watch History" + //first in first out, lists movies chronologicall order
+                          "\n5. View Most Recently Watched " + //last in first out, views last watched first
+                          "\n6. Number of times Each Movie has been Watched" +
+                          "\n7. Most watched Movie" +
+                          "\n8. Most watched Genre" +
+                          "\n9. Log Out\n--------------\n\n");
+                        int optionToLogin = scan1.nextInt();
+                  if (optionToLogin=1) {
+                        System.out.println("You are already registered, would you like to register another user? Yes-1 No-2");
+                        int optionToRegisterAgain = scan1.nextInt();
+                  }
                   
+                  //option 2 will never be "selected" user enters login process after registering is done.
+                  scan1.nextLine(); //prepares scanner for next input
                   
-                  
-                  //option 2 will never be "selected"
-                  System.out.println("Please enter your username:");
-                  String loginU = scan1.nextLine();
-                  System.out.println("Enter your password:");
-                  String loginPass = scan1.nextLine();
                   
                   //loop to verify login credentials
-                  int countLoginAttempts=0;
-                  boolean loggedIn ;
+                  
+            
+            } while (scan1.nextInt()!=99);   ///ends do while loop
+            
+            
+      }
+      
+      public static boolean loginUser(String username, String password, int countLogins) {
+            System.out.println("Login below");
+            System.out.println("Please enter your username:");
+            String loginU = scan1.nextLine();
+            System.out.println("Enter your password:");
+            String loginPass = scan1.nextLine();
+      
+            int countLoginAttempts=0;
+            boolean loggedIn ;
                   
                   /* possibilities for logging in:
                   1. login successfully, should proceed to rest of menu
                   2. login incorrectly, given 2 more attempts
                   3. login incorrectly, past 2 attempts, random pass should be generated
                   */
-                  
-                  
-                  do {
-                        loggedIn = ((loginU.equals(username)) && (loginPass.equals(password)));
-                        countLoginAttempts++;
-                        
-                  } while ((loggedIn == false) && countLoginAttempts<2);
-                  
-                  if (loggedIn) {
-                        System.out.println("You are now logged in.");
-                  }
-                  
+      
+      
+            do {
+                  loggedIn = ((loginU.equals(username)) && (loginPass.equals(password)));
+                  countLoginAttempts++;
             
+            } while ((loggedIn == false) && countLoginAttempts<2);
+      
+            if (loggedIn) {
+                  System.out.println("You are now logged in.");
+            }
             
-            
-            
-            
-            
-            
-            } while (scan1.nextInt()!=99);   ///ends do while loop
-            
-            
+            return loggedIn;
       }
       
       //method to register new user login credentials.
