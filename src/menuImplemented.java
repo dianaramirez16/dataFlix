@@ -138,26 +138,31 @@ public class menuImplemented {
                             (password.contains("&")) || (password.contains("*")) || (password.contains("?")));
             boolean valid;
             if (validUsername==false) {
-                  System.out.println("Your username does not fulfill the requirements. It must be unique and contain a digit 1-9. Please try again.");
+                  System.out.println("Your username does not fulfill the requirements. It must be unique and contain a digit 1-9. " +
+                          "\nPress enter and try again.");
                   valid=false;
                   countAttempts++;
-                  System.out.println(countAttempts);
+                  System.out.println("count attempts: " + countAttempts);
             } else if (validPassword==false) {
-                  System.out.println("Your password does not fulfill the requirements. It must be longer than 8 characters and contain a special character, such as ! or @.");
-                  valid=false;
+                  System.out.println("Your password does not fulfill the requirements. It must be longer than 8 characters " +
+                          "\nand contain a special character, such as ! or @. \nPress enter and try again.");
+                  valid = false;
                   countAttempts++;
-                  System.out.println(countAttempts);
+                  System.out.println("count attempts: " + countAttempts);
+            } else if ((validPassword==false)&&(validUsername==false)){
+                  System.out.println("Neither your username nor your password fulfill the requirements, please try again.");
             } else if (valid=false && countAttempts==3) { //creates temp variables, not stored in array
                   int randomN = random.nextInt(999999) + 0;
                   username = userLastName+randomN;
                   password = "password!";
-                  System.out.println(countAttempts);
+                  System.out.println("count attempts: " + countAttempts);
                   System.out.println("\nDue to too many failed attempts, you have been logged in using temporary credentials. Please see below:" +
                           "\nUsername: " + username + "\nPassword: " + password);
                         //loginUser(username, password);
             } else {
             System.out.println("Thank you. \nYour login credentials are set. username: "+username + "\t password: " + password);
-                  System.out.println("\nYou may now log in.");   System.out.println(countAttempts);
+                  System.out.println("\nYou may now log in.");
+                  System.out.println("count attempts: " + countAttempts);
                   valid=true;
             }
             return valid;
