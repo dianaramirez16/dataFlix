@@ -1,7 +1,9 @@
 this will contain project notes and goals
 
 currently working on:
-loginattempts, counter does not interact with loop to check constraints. after 2 attempts should quit, keeps prompting user
+loginattempts counter does not interact with loop to check constraints. after 2 attempts should quit, keeps prompting user
+
+**last minute fix, see if it works now
 
 to do:
 setup menu for user to interact with
