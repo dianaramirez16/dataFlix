@@ -32,8 +32,7 @@ public class menuImplemented {
       public static void startMenu(){
             int optionToRegister;
             do {
-                  System.out.print("Hello, first-timer. \n" +
-                          "Please select option 1 to get started with your new account." +
+                  System.out.print("Hello, first-timer. Please select option 1 to get started with your new account." +
                           "\n1. Register account" +
                           "\n2. Login " +
                           "\n3. Watch a movie" +
@@ -136,8 +135,10 @@ public class menuImplemented {
             boolean validPassword = ((password.length()>7) && (password.contains("!")) || (password.contains("@")) || (password.contains("#")) ||
                             (password.contains("$")) || (password.contains("%")) || (password.contains("^")) ||
                             (password.contains("&")) || (password.contains("*")) || (password.contains("?")));
-            boolean valid;
-            if (validUsername==false) {
+            boolean valid = false;
+            if ((validPassword==false)&&(validUsername==false)) {
+                  System.out.println("Neither your username nor your password fulfill the requirements, please try again.");
+            } else if (validUsername==false) {
                   System.out.println("Your username does not fulfill the requirements. It must be unique and contain a digit 1-9. " +
                           "\nPress enter and try again.");
                   valid=false;
@@ -149,8 +150,6 @@ public class menuImplemented {
                   valid = false;
                   countAttempts++;
                   System.out.println("count attempts: " + countAttempts);
-            } else if ((validPassword==false)&&(validUsername==false)){
-                  System.out.println("Neither your username nor your password fulfill the requirements, please try again.");
             } else if (valid=false && countAttempts==3) { //creates temp variables, not stored in array
                   int randomN = random.nextInt(999999) + 0;
                   username = userLastName+randomN;
