@@ -17,7 +17,7 @@ public class menuImplemented {
       public static void main(String[] args) {
             
             createMovies();
-           
+            
             startMenu();
             
       }
@@ -27,18 +27,18 @@ public class menuImplemented {
             String userFirstName, userLastName;
             System.out.println("Hello, first-timer. \nPlease register your login credentials below. \n\nEnter your first name: ");
             userFirstName = scan1.nextLine();
-      
+            
             System.out.println("Enter your last name: ");
             userLastName = scan1.nextLine();
             
             System.out.println("Username MUST contain at least one digit (0-9).\nEnter username:");
             username = scan1.nextLine();
-      
+            
             System.out.println("Choose a password. It must contain at least one special character (! @ # $ % ^ & * or ?) \nEnter password:");
             password = scan1.nextLine();
-      
+            
             registerUser(username, password);
-      
+            
             //loop to verify login credentials, will need to figure out exit condition and effect
             int countLogins=0;
             boolean loginMethodReturn;
@@ -52,7 +52,7 @@ public class menuImplemented {
                   System.out.println("Due to too many failed attempts, you have been logged in using temporary credentials. Please see below:" +
                           "\nUsername: " + username + "\nPassword: " + password);
             }
-      
+            
             //option 2 login directly, can only be chosen if user has registered all the above credentials first
       }
       
