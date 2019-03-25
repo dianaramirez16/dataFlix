@@ -119,7 +119,17 @@ public class menuImplemented {
                   }
             } else {
                   countAttempts++;
-                  collectCredentials(); //prompts user to enter credentials all over again
+                  if (countAttempts>3){
+                        collectCredentials(); //prompts user to enter credentials all over again
+                  } else {
+                        int randomN = random.nextInt(999999) + 0;
+                        username = userLastName+randomN;
+                        password = "password!";
+                        System.out.println("count attempts: " + countAttempts);
+                        System.out.println("\nDue to too many failed attempts, you have been logged in using temporary credentials. Please see below:" +
+                                "\nUsername: " + username + "\nPassword: " + password);
+                  }
+                  
                   
             }
       }
@@ -153,14 +163,6 @@ public class menuImplemented {
                   valid = false;
                   
                   System.out.println("count attempts: " + countAttempts);
-            } else if (valid=false && countAttempts==3) { //creates temp variables, not stored in array
-                  int randomN = random.nextInt(999999) + 0;
-                  username = userLastName+randomN;
-                  password = "password!";
-                  System.out.println("count attempts: " + countAttempts);
-                  System.out.println("\nDue to too many failed attempts, you have been logged in using temporary credentials. Please see below:" +
-                          "\nUsername: " + username + "\nPassword: " + password);
-                        //loginUser(username, password);
             } else {
             System.out.println("Thank you. \nYour login credentials are set. username: "+username + "\t password: " + password);
                   System.out.println("\nYou may now log in.");
