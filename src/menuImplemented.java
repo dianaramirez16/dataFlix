@@ -44,7 +44,7 @@ public class menuImplemented {
                   if (optionToRegister==1) {
                         String userFirstName, userLastName;
                         scan1.nextLine();
-                        System.out.println(" \nPlease register your login credentials below. \n\nEnter your first name: ");
+                        System.out.println("Please register your login credentials below. \n\nEnter your first name: ");
                         userFirstName = scan1.nextLine();
                         //scan1.nextLine(); //prepares scanner for next input
                         System.out.println("Enter your last name: ");
@@ -70,7 +70,7 @@ public class menuImplemented {
                               countRegistering++;
                         }
                         if (valid) {
-                              System.out.println("you may now log in:");
+                              System.out.println("\nYou may now log in.");
                   
                         } else { //executes after 3 wrong tries
                               username = userLastName+"1";
@@ -79,17 +79,21 @@ public class menuImplemented {
                                       "\nUsername: " + username + "\nPassword: " + password);
                         }
                   } else { //if option 1 is not entered
-                        System.out.println("You do not have access to this feature until you are registered");
-                  };
+                        System.out.println("You do not have access to this feature until you are registered.");
+                  }
+                  
+                  
+                  
                   //option 2 will never be "selected"
-                  System.out.println("Please Enter your username:");
-                  String loginU = scan1.next();
+                  System.out.println("Please enter your username:");
+                  String loginU = scan1.nextLine();
                   System.out.println("Enter your password:");
-                  String loginPass = scan1.next();
+                  String loginPass = scan1.nextLine();
                   
                   //loop to verify login credentials
                   int countLoginAttempts=0;
                   boolean loggedIn ;
+                  
                   /* possibilities for logging in:
                   1. login successfully, should proceed to rest of menu
                   2. login incorrectly, given 2 more attempts
@@ -132,7 +136,7 @@ public class menuImplemented {
                             (password.contains("&")) || (password.contains("*")) || (password.contains("?")));
             
             if (valid) {
-                  System.out.println("Thank you. \nYour login credentials are set: \nYour username: "+username + "\nYour password: " + password);
+                  System.out.println("Thank you. \nYour login credentials are set. your username: "+username + "your password: " + password);
             } else if (countReg<1) {
                   System.out.println("Invalid! Your username must contain a number 1-9" +
                           " and your password must contain at least 1 special character: !@#$%^& or *. Please try again.");
