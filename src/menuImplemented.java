@@ -33,7 +33,7 @@ public class menuImplemented {
                           "\n1. Register account" +
                           "\n2. Login " +
                           "\n3. Watch a movie" +
-                          "\n4. View Complete Watch History" + //first in first out, lists movies chronologicall order
+                          "\n4. View Complete Watch History" + //first in first out, lists movies chronological order
                           "\n5. View Most Recently Watched " + //last in first out, views last watched first
                           "\n6. Number of times Each Movie has been Watched" +
                           "\n7. Most watched Movie" +
@@ -82,7 +82,7 @@ public class menuImplemented {
                         System.out.println("You do not have access to this feature until you are registered.");
                   }
                   //prompts login menu again
-                  //
+                  //OPTION 2
       
                   System.out.print("You must login before you can access options 3-9." +
                           "\n1. Register account" +
@@ -95,7 +95,7 @@ public class menuImplemented {
                           "\n8. Most watched Genre" +
                           "\n9. Log Out\n--------------\n\n");
                         int optionToLogin = scan1.nextInt();
-                  if (optionToLogin=1) {
+                  if (optionToLogin==1) {
                         System.out.println("You are already registered, would you like to register another user? Yes-1 No-2");
                         int optionToRegisterAgain = scan1.nextInt();
                   }
@@ -119,7 +119,7 @@ public class menuImplemented {
             System.out.println("Enter your password:");
             String loginPass = scan1.nextLine();
       
-            int countLoginAttempts=0;
+            countLogins=0;
             boolean loggedIn ;
                   
                   /* possibilities for logging in:
@@ -131,9 +131,9 @@ public class menuImplemented {
       
             do {
                   loggedIn = ((loginU.equals(username)) && (loginPass.equals(password)));
-                  countLoginAttempts++;
+                  countLogins++;
             
-            } while ((loggedIn == false) && countLoginAttempts<2);
+            } while ((loggedIn == false) && countLogins<2);
       
             if (loggedIn) {
                   System.out.println("You are now logged in.");
