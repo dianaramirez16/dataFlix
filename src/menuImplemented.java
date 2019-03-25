@@ -81,22 +81,20 @@ public class menuImplemented {
                   } else { //if option 1 is not entered
                         System.out.println("You do not have access to this feature until you are registered");
                   };
-                  
-                  System.out.println("Please login. Enter your username:");
-                  String login = scan1.next();
-      
+                  //option 2 will never be "selected"
+                  System.out.println("Please Enter your username:");
+                  String loginU = scan1.next();
                   System.out.println("Enter your password:");
-                  String loginpass = scan1.next();
-      
-      
-                  //loop to verify login credentials, will need to figure out exit condition and effect
-                  int countLogins=0;
+                  String loginPass = scan1.next();
+                  
+                  //loop to verify login credentials
+                  int countLoginAttempts=0;
                   boolean loggedIn ;
                   do {
-                        loggedIn = ((login.equals(username)) && (loginpass.equals(password)));
+                        loggedIn = ((loginU.equals(username)) && (loginPass.equals(password)));
             
                         countLogins++;
-                  } while ((loggedIn == false) && countLogins<2);
+                  } while ((loggedIn == false) && countLoginAttempts<2);
       
       
                   if (loggedIn) {
