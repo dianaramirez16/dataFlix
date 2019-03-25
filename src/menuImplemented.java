@@ -28,6 +28,9 @@ public class menuImplemented {
       
       public static void startMenu(){
             //option 1 - register and create user login credentials
+            do {
+            
+            } while (scan1.nextInt()!=99);
             String userFirstName, userLastName;
             System.out.println("Hello, first-timer. \nPlease register your login credentials below. \n\nEnter your first name: ");
             userFirstName = scan1.nextLine();
