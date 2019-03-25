@@ -18,7 +18,6 @@ public class menuImplemented {
       static ArrayStack arrayStack; //stack
       static CircularQueue circularQueue; //queue
       
-      
       public static void main(String[] args) {
             
             createMovies();
@@ -39,14 +38,15 @@ public class menuImplemented {
                           "\n6. Number of times Each Movie has been Watched" +
                           "\n7. Most watched Movie" +
                           "\n8. Most watched Genre" +
-                          "\n9. Log Out");
+                          "\n9. Log Out\n--------------\n\n");
                         optionToRegister = scan1.nextInt();
                         
                   if (optionToRegister==1) {
                         String userFirstName, userLastName;
+                        scan1.nextLine();
                         System.out.println(" \nPlease register your login credentials below. \n\nEnter your first name: ");
                         userFirstName = scan1.nextLine();
-            
+                        //scan1.nextLine(); //prepares scanner for next input
                         System.out.println("Enter your last name: ");
                         userLastName = scan1.nextLine();
             
@@ -70,7 +70,7 @@ public class menuImplemented {
                               countRegistering++;
                         }
                         if (valid) {
-                              System.out.println("you are now logged in.");
+                              System.out.println("you may now log in:");
                   
                         } else { //executes after 3 wrong tries
                               username = userLastName+"1";
@@ -82,30 +82,29 @@ public class menuImplemented {
                         System.out.println("You do not have access to this feature until you are registered");
                   };
                   
-            /*option 2---login
-            System.out.println("Please login. Enter your username:");
-            String login = scan1.next();
-            
-            System.out.println("Enter your password:");
-            String loginpass = scan1.next();
-            
+                  System.out.println("Please login. Enter your username:");
+                  String login = scan1.next();
       
-            //loop to verify login credentials, will need to figure out exit condition and effect
-            int countLogins=0;
-            boolean loggedIn ;
-            do {
-                  loggedIn = ((login.equals(username)) && (loginpass.equals(password)));
+                  System.out.println("Enter your password:");
+                  String loginpass = scan1.next();
+      
+      
+                  //loop to verify login credentials, will need to figure out exit condition and effect
+                  int countLogins=0;
+                  boolean loggedIn ;
+                  do {
+                        loggedIn = ((login.equals(username)) && (loginpass.equals(password)));
+            
+                        countLogins++;
+                  } while ((loggedIn == false) && countLogins<2);
+      
+      
+                  if (loggedIn) {
+                        System.out.println("You are now logged in.");
+                  } else {
+                        System.out.println("The credentials were not entered correctly, please try again.");
+                  }
                   
-                  countLogins++;
-            } while ((loggedIn == false) && countLogins<2);
-            
-            
-            if (loggedIn) {
-                  System.out.println("You are now logged in.");
-            } else {
-                  System.out.println("The credentials were not entered correctly, please try again.");
-            }
-            */
             
             
             
