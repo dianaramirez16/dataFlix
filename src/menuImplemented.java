@@ -51,16 +51,7 @@ public class menuImplemented {
                       
                         
                         
-                        if (valid) {
-                              System.out.println("\nYou may now log in.");
-                  
-                        } else { //executes after 3 wrong tries
-                              int randomN = random.nextInt(9) + 0;
-                              username = userLastName+"randomN";
-                              password = userFirstName+"*";
-                              System.out.println("\nDue to too many failed attempts, you have been logged in using temporary credentials. Please see below:" +
-                                      "\nUsername: " + username + "\nPassword: " + password);
-                        }
+                      
                         
                   } else { //if option 1 is not entered
                         System.out.println("You do not have access to this feature until you are registered.");
@@ -139,11 +130,11 @@ public class menuImplemented {
                         countUsers++;
                   }
             } else {
-                  collectCredentials();
+                  collectCredentials(); //prompts user to enter credentials all over again
             }
       }
       
-      public static boolean loginUser(String username, String password, int countLogins) {
+      public static boolean loginUser(String username, String password) {
             System.out.println("Login below");
             System.out.println("Please enter your username:");
             String loginU = scan1.nextLine();
@@ -175,9 +166,9 @@ public class menuImplemented {
       
       
       
-      //method check credentials
+      //method checks credentials
       public static boolean checkCredentials(String username, String password) {
-            
+            int countAttempts=0;
             boolean validUsername = ((username.contains("1")) || (username.contains("2")) ||
                     (username.contains("3")) || (username.contains("4")) ||
                     (username.contains("5")) || (username.contains("6")) ||
@@ -190,11 +181,14 @@ public class menuImplemented {
             if (validUsername==false) {
                   System.out.println("Your username does not fulfill the requirements. It must be unique and contain a digit 1-9. Please try again.");
                   valid=false;
+                  countAttempts++;
             } else if (validPassword==false) {
                   System.out.println("Your password does not fulfill the requirements. It must be longer than 8 characters and contain a special character, such as ! or @.");
                   valid=false;
+                  countAttempts++;
             } else {
                   System.out.println("Thank you. \nYour login credentials are set. your username: "+username + "your password: " + password);
+                  System.out.println("\nYou may now log in.");
                   valid=true;
             }
             return valid;

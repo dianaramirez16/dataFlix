@@ -69,11 +69,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/menuImplemented.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="58" column="63" selection-start-line="58" selection-start-column="63" selection-end-line="58" selection-end-column="63" />
+            <state relative-caret-position="575">
+              <caret line="132" column="90" selection-start-line="132" selection-start-column="90" selection-end-line="132" selection-end-column="90" />
               <folding>
                 <element signature="e#0#9975#0" expanded="true" />
                 <element signature="imports" expanded="true" />
+                <element signature="method#loginUser#0;class#menuImplemented#0" />
                 <element signature="method#formatMovieDuration#0;class#menuImplemented#0" />
                 <element signature="method#createMovies#0;class#menuImplemented#0" />
                 <element signature="method#watchMovie#0;class#menuImplemented#0" />
@@ -98,11 +99,15 @@
     <findStrings>
       <find>startmenu</find>
       <find>registerUser</find>
+      <find>countUsers</find>
+      <find>countAttempts</find>
     </findStrings>
     <replaceStrings>
       <replace>movieDuration</replace>
       <replace>loginPass</replace>
       <replace>checkCredentials</replace>
+      <replace>countAttempts</replace>
+      <replace>countUsers</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -134,7 +139,7 @@
     <panes />
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553499883375" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553501409644" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
@@ -261,11 +266,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/menuImplemented.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="58" column="63" selection-start-line="58" selection-start-column="63" selection-end-line="58" selection-end-column="63" />
+        <state relative-caret-position="575">
+          <caret line="132" column="90" selection-start-line="132" selection-start-column="90" selection-end-line="132" selection-end-column="90" />
           <folding>
             <element signature="e#0#9975#0" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="method#loginUser#0;class#menuImplemented#0" />
             <element signature="method#formatMovieDuration#0;class#menuImplemented#0" />
             <element signature="method#createMovies#0;class#menuImplemented#0" />
             <element signature="method#watchMovie#0;class#menuImplemented#0" />
