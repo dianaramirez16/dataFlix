@@ -34,13 +34,10 @@ public class ArrayStack {
             // This method deletes an element from the Stack
             // First check if there is an element to delete
             if(!isEmpty()) {
-			/*E temp = this.theData[TOS];	// Save the data first
-			TOS--;						// Then decrement the TOS
-			return temp;				// Then return the element
-			 */
-                  CreateMovie temp = movieList[TOS--];
-                  TOS--;
-                  return temp;
+			
+                  CreateMovie temp = movieList[TOS--]; //saves data to temp
+                  TOS--; //decrements TOS pointer
+                  return temp; //returns element
             }
             else {
                   System.out.println("Stack Underflow..!!");

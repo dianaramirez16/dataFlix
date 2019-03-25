@@ -153,7 +153,7 @@ public class menuImplemented {
             
       }
       
-      public printStack {
+      public static void printStack() { //
             for (int i = arrayStack.TOS; i>0; i-- ){
                   String s = i + "" + (myMovieArray[i].getMovieTitle()) + "\n";
                   System.out.println(s);
@@ -161,8 +161,11 @@ public class menuImplemented {
             }
       }
       
-      public printQueue {
-      
+      public static void printQueue() { //
+            for (int i = arrayStack.TOS; i>0; i-- ){
+                  String s = i + "" + (myMovieArray[i].getMovieTitle()) + "\n";
+                  System.out.println(s);
+                  
       }
       
       
