@@ -19,7 +19,7 @@ public class menuImplemented {
       static CreateMovie[] myMovieArray; //holds movie objects
       static ArrayStack arrayStack; //stack
       static CircularQueue circularQueue; //queue
-      static int countUsers=0, countAttempts=0;;
+      static int countUsers=0, countAttempts=1;;
       static String credentialsArray[] = new String[20];
       
       public static void main(String[] args) {
