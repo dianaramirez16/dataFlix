@@ -19,7 +19,7 @@ public class menuImplemented {
       static CreateMovie[] myMovieArray; //holds movie objects
       static ArrayStack arrayStack; //stack
       static CircularQueue circularQueue; //queue
-      static int countUsers=0;
+      static int countUsers=0, countAttempts=0;;
       static String credentialsArray[] = new String[20];
       
       public static void main(String[] args) {
@@ -118,7 +118,9 @@ public class menuImplemented {
                         countUsers++;
                   }
             } else {
+                  countAttempts++;
                   collectCredentials(); //prompts user to enter credentials all over again
+                  
             }
       }
   
@@ -126,7 +128,7 @@ public class menuImplemented {
       
       //method checks credentials
       public static boolean checkCredentials(String username, String password, String userLastName) {
-            int countAttempts=0;
+            
             boolean validUsername = ((username.contains("1")) || (username.contains("2")) ||
                     (username.contains("3")) || (username.contains("4")) ||
                     (username.contains("5")) || (username.contains("6")) ||
@@ -137,18 +139,19 @@ public class menuImplemented {
                             (password.contains("&")) || (password.contains("*")) || (password.contains("?")));
             boolean valid = false;
             if ((validPassword==false)&&(validUsername==false)) {
-                  System.out.println("Neither your username nor your password fulfill the requirements, please try again.");
+                  System.out.println("Neither your username nor your password fulfill the requirements, Press ENTER and try again.");
+                  System.out.println("count attempts: " + countAttempts);
             } else if (validUsername==false) {
                   System.out.println("Your username does not fulfill the requirements. It must be unique and contain a digit 1-9. " +
-                          "\nPress enter and try again.");
+                          "\nPress ENTER and try again.");
                   valid=false;
-                  countAttempts++;
+                  
                   System.out.println("count attempts: " + countAttempts);
             } else if (validPassword==false) {
                   System.out.println("Your password does not fulfill the requirements. It must be longer than 8 characters " +
-                          "\nand contain a special character, such as ! or @. \nPress enter and try again.");
+                          "\nand contain a special character, such as ! or @. \nPress ENTER and try again.");
                   valid = false;
-                  countAttempts++;
+                  
                   System.out.println("count attempts: " + countAttempts);
             } else if (valid=false && countAttempts==3) { //creates temp variables, not stored in array
                   int randomN = random.nextInt(999999) + 0;
