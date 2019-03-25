@@ -27,45 +27,51 @@ public class menuImplemented {
       }
       
       public static void startMenu(){
-            //option 1 - register and create user login credentials
+            int optionToRegister;
             do {
-            
-            } while (scan1.nextInt()!=99);
-            String userFirstName, userLastName;
-            System.out.println("Hello, first-timer. \nPlease register your login credentials below. \n\nEnter your first name: ");
-            userFirstName = scan1.nextLine();
-            
-            System.out.println("Enter your last name: ");
-            userLastName = scan1.nextLine();
-            
-            System.out.println("Username MUST contain at least one digit (0-9).\nEnter username:");
-            username = scan1.nextLine();
-            
-            System.out.println("Choose a password. It must contain at least one special character (! @ # $ % ^ & * or ?) \nEnter password:");
-            password = scan1.nextLine();
-            
-            int countRegistering =0;
-            boolean valid = registerUser(username, password,countRegistering); //has true or false value based on whether their credentials were accepted
-            
-            
-            while(valid==false && countRegistering<2) {
-                  System.out.println("Please login. Enter your username:");
-                  String login = scan1.next();
                   
-                  System.out.println("Enter your password:");
-                  String loginpass = scan1.next();
-                  valid = registerUser(login, loginpass, countRegistering);
-                  countRegistering++;
-            }
-            if (valid) {
-                  System.out.println("you are now logged in.");
+                  System.out.print("Hello, first-timer. \n" +
+                          "Please select option 1 to register your new login account.");
+                        optionToRegister = scan1.nextInt();
+                  if (optionToRegister==1) {
                   
-            } else { //executes after 3 wrong tries
-                  username = userLastName+"1";
-                  password = userFirstName+"*";
-                  System.out.println("\nDue to too many failed attempts, you have been logged in using temporary credentials. Please see below:" +
-                          "\nUsername: " + username + "\nPassword: " + password);
-            }
+                  
+                  
+                  String userFirstName, userLastName;
+                  System.out.println(" \nPlease register your login credentials below. \n\nEnter your first name: ");
+                  userFirstName = scan1.nextLine();
+      
+                  System.out.println("Enter your last name: ");
+                  userLastName = scan1.nextLine();
+      
+                  System.out.println("Username MUST contain at least one digit (0-9).\nEnter username:");
+                  username = scan1.nextLine();
+      
+                  System.out.println("Choose a password. It must contain at least one special character (! @ # $ % ^ & * or ?) \nEnter password:");
+                  password = scan1.nextLine();
+      
+                  int countRegistering =0;
+                  boolean valid = registerUser(username, password,countRegistering); //has true or false value based on whether their credentials were accepted
+      
+      
+                  while(valid==false && countRegistering<2) {
+                        System.out.println("Please login. Enter your username:");
+                        String login = scan1.next();
+            
+                        System.out.println("Enter your password:");
+                        String loginpass = scan1.next();
+                        valid = registerUser(login, loginpass, countRegistering);
+                        countRegistering++;
+                  }
+                  if (valid) {
+                        System.out.println("you are now logged in.");
+            
+                  } else { //executes after 3 wrong tries
+                        username = userLastName+"1";
+                        password = userFirstName+"*";
+                        System.out.println("\nDue to too many failed attempts, you have been logged in using temporary credentials. Please see below:" +
+                                "\nUsername: " + username + "\nPassword: " + password);
+                  }
             
             /*option 2---login
             System.out.println("Please login. Enter your username:");
@@ -90,7 +96,17 @@ public class menuImplemented {
             } else {
                   System.out.println("The credentials were not entered correctly, please try again.");
             }
-            */
+            */} else break;
+            
+            
+            
+            
+            
+            
+            
+            } while (scan1.nextInt()!=99);   ///ends do while loop
+            
+            
       }
       
       //method to register new user login credentials.
