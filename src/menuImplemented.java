@@ -45,15 +45,22 @@ public class menuImplemented {
                         optionToRegister = scan1.nextInt();
                         
                   if (optionToRegister==1) {
-                        
                         collectCredentials(); //method stores credentials in array
-                        
-                      
-                        
-                        
-                      
-                        
-                  } else { //if option 1 is not entered
+      
+      
+                  } else { //executes after 3 wrong tries
+                        int randomN = random.nextInt(9) + 0;
+                        username = userLastName+"randomN";
+                        password = userFirstName+"*";
+                        System.out.println("\nDue to too many failed attempts, you have been logged in using temporary credentials. Please see below:" +
+                                "\nUsername: " + username + "\nPassword: " + password);
+                  }
+      
+      
+      
+      
+      
+            } else { //if option 1 is not entered
                         System.out.println("You do not have access to this feature until you are registered.");
                   }
                   //prompts login menu again
@@ -167,7 +174,7 @@ public class menuImplemented {
       
       
       //method checks credentials
-      public static boolean checkCredentials(String username, String password) {
+      public static boolean checkCredentials(String username, String password, String userLastName) {
             int countAttempts=0;
             boolean validUsername = ((username.contains("1")) || (username.contains("2")) ||
                     (username.contains("3")) || (username.contains("4")) ||
@@ -186,18 +193,24 @@ public class menuImplemented {
                   System.out.println("Your password does not fulfill the requirements. It must be longer than 8 characters and contain a special character, such as ! or @.");
                   valid=false;
                   countAttempts++;
+            } else if (valid=false && countAttempts==3) {
+                  int randomN = random.nextInt(999999) + 0;
+                  username = userLastName+randomN;
+                  password = "password!";
+                  System.out.println("\nDue to too many failed attempts, you have been logged in using temporary credentials. Please see below:" +
+                          "\nUsername: " + username + "\nPassword: " + password);
+                  //
+                  
             } else {
-                  System.out.println("Thank you. \nYour login credentials are set. your username: "+username + "your password: " + password);
+      
+            System.out.println("Thank you. \nYour login credentials are set. your username: "+username + "your password: " + password);
                   System.out.println("\nYou may now log in.");
                   valid=true;
             }
             return valid;
       }
       
-      
-      
-      
-      
+    
       
       //String movieTitle, int movieYear, int movieDuration, String movieGenre, double movieRating
       public static String formatMovieDuration ( int minutes){
