@@ -11,7 +11,9 @@
  *  ╘══════════════════════════════════════════════════════╛
  */
 import java.util.*;
+import java.util.Random;
 public class menuImplemented {
+      static Random random = new Random();
       static Scanner scan1 = new Scanner(System.in); //global scanner
       static String username, password;
       static CreateMovie[] myMovieArray;
@@ -47,25 +49,14 @@ public class menuImplemented {
                         collectCredentials(); //method stores credentials in array
                         
                       
-                        int countRegistering =0;
-                        boolean valid = checkCredentials(username, password); //has true or false value based on whether their credentials were accepted
-            
-            
-                        while(valid==false && countRegistering<2) {
-                              System.out.println("Please login. Enter your username:");
-                              String login = scan1.nextLine();
-                              System.out.println("Enter your password:");
-                              String loginpass = scan1.nextLine();
-                              valid = checkCredentials(login, loginpass);
-                              countRegistering++;
-                        }
                         
                         
                         if (valid) {
                               System.out.println("\nYou may now log in.");
                   
                         } else { //executes after 3 wrong tries
-                              username = userLastName+"1";
+                              int randomN = random.nextInt(9) + 0;
+                              username = userLastName+"randomN";
                               password = userFirstName+"*";
                               System.out.println("\nDue to too many failed attempts, you have been logged in using temporary credentials. Please see below:" +
                                       "\nUsername: " + username + "\nPassword: " + password);
