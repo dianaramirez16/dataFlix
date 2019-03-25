@@ -143,27 +143,36 @@ public class menuImplemented {
       }
       
       //method to register new user login credentials.
-      public static boolean registerUser(String username, String password, int countReg) {
+      public static boolean registerUser(String username, String password) {
             
-            boolean valid = ((username.contains("1")) || (username.contains("2")) ||
+            boolean validUsername = ((username.contains("1")) || (username.contains("2")) ||
                     (username.contains("3")) || (username.contains("4")) ||
                     (username.contains("5")) || (username.contains("6")) ||
                     (username.contains("7")) || (username.contains("8")) ||
-                    (username.contains("9")) || (username.contains("0"))) &&
-                    ((password.contains("!")) || (password.contains("@")) || (password.contains("#")) ||
+                    (username.contains("9")) || (username.contains("0")));
+            boolean validPassword = ((password.length()>7) && (password.contains("!")) || (password.contains("@")) || (password.contains("#")) ||
                             (password.contains("$")) || (password.contains("%")) || (password.contains("^")) ||
                             (password.contains("&")) || (password.contains("*")) || (password.contains("?")));
-            
-            if (valid) {
+            boolean valid;
+            if (validUsername==false) {
+                  System.out.println("Your username does not fulfill the requirements. It must be unique and contain a digit 1-9. Please try again.");
+                  valid=false;
+            } else if (validPassword==false) {
+                  System.out.println("Your password does not fulfill the requirements. It must be longer than 8 characters and contain a special character, such as ! or @.");
+                  valid=false;
+            } else {
                   System.out.println("Thank you. \nYour login credentials are set. your username: "+username + "your password: " + password);
-            } else if (countReg<1) {
-                  System.out.println("Invalid! Your username must contain a number 1-9" +
-                          " and your password must contain at least 1 special character: !@#$%^& or *. Please try again.");
+                  valid=true;
             }
             return valid;
       }
-      //String movieTitle, int movieYear, int movieDuration, String movieGenre, double movieRating
       
+      
+      
+      
+      
+      
+      //String movieTitle, int movieYear, int movieDuration, String movieGenre, double movieRating
       public static String formatMovieDuration ( int minutes){
             String time;
             if (minutes > 60) {

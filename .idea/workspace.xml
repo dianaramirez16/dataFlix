@@ -70,12 +70,15 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/menuImplemented.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-501">
-              <caret line="45" column="74" selection-start-line="45" selection-start-column="74" selection-end-line="45" selection-end-column="74" />
+            <state relative-caret-position="518">
+              <caret line="166" column="25" selection-start-line="166" selection-start-column="25" selection-end-line="166" selection-end-column="25" />
               <folding>
                 <element signature="e#0#9975#0" expanded="true" />
                 <element signature="method#formatMovieDuration#0;class#menuImplemented#0" />
                 <element signature="method#createMovies#0;class#menuImplemented#0" />
+                <element signature="method#watchMovie#0;class#menuImplemented#0" />
+                <element signature="method#printStack#0;class#menuImplemented#0" />
+                <element signature="method#printQueue#0;class#menuImplemented#0" />
               </folding>
             </state>
           </provider>
@@ -130,7 +133,7 @@
     <panes />
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553495649769" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553497593609" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
@@ -257,12 +260,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/menuImplemented.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-501">
-          <caret line="45" column="74" selection-start-line="45" selection-start-column="74" selection-end-line="45" selection-end-column="74" />
+        <state relative-caret-position="518">
+          <caret line="166" column="25" selection-start-line="166" selection-start-column="25" selection-end-line="166" selection-end-column="25" />
           <folding>
             <element signature="e#0#9975#0" expanded="true" />
             <element signature="method#formatMovieDuration#0;class#menuImplemented#0" />
             <element signature="method#createMovies#0;class#menuImplemented#0" />
+            <element signature="method#watchMovie#0;class#menuImplemented#0" />
+            <element signature="method#printStack#0;class#menuImplemented#0" />
+            <element signature="method#printQueue#0;class#menuImplemented#0" />
           </folding>
         </state>
       </provider>
