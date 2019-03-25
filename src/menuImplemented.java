@@ -112,6 +112,13 @@ public class menuImplemented {
       }
       //String movieTitle, int movieYear, int movieDuration, String movieGenre, double movieRating
       
+      public static String formatMovieDuration ( int minutes){
+            String time;
+            if (minutes > 60) {
+                  time = minutes / 60 + "h " + minutes % 60 + "m";
+                  return time;
+            } else return null;
+      }
       
       public static void createMovies(){
             //create array initialized to hold all these movies
@@ -162,20 +169,10 @@ public class menuImplemented {
       }
       
       public static void printQueue() { //
-            for (int i = arrayStack.TOS; i>0; i-- ){
+            for (int i = arrayStack.TOS; i > 0; i--) {
                   String s = i + "" + (myMovieArray[i].getMovieTitle()) + "\n";
                   System.out.println(s);
-                  
-      }
-      
-      
-      public static String formatMovieDuration(int minutes) {
-            String time;
-            if (minutes>60){
-                  time = minutes/60 + "h " + minutes%60 + "m";
-                  return time;
-            } else return null;
-      }
+            }
       
       /*
       public String checkGenre(String subjecttemp){
@@ -202,5 +199,5 @@ public class menuImplemented {
       //scan1.close();
       */
       
-      
+      }
 }
