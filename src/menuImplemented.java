@@ -42,6 +42,9 @@ public class menuImplemented {
                         optionToRegister = scan1.nextInt();
                         
                   if (optionToRegister==1) {
+                        //call variable collect method
+                        
+                        
                         String userFirstName, userLastName;
                         scan1.nextLine();  //prepares scanner for next input
                         System.out.println("Please register your login credentials below. \n\nEnter your first name: ");
@@ -55,9 +58,9 @@ public class menuImplemented {
             
                         System.out.println("Choose a password. It must contain at least one special character (! @ # $ % ^ & * or ?) \nEnter password:");
                         password = scan1.nextLine();
-            
+                        
                         int countRegistering =0;
-                        boolean valid = registerUser(username, password,countRegistering); //has true or false value based on whether their credentials were accepted
+                        boolean valid = checkCredentials(username, password); //has true or false value based on whether their credentials were accepted
             
             
                         while(valid==false && countRegistering<2) {
@@ -65,9 +68,11 @@ public class menuImplemented {
                               String login = scan1.nextLine();
                               System.out.println("Enter your password:");
                               String loginpass = scan1.nextLine();
-                              valid = registerUser(login, loginpass, countRegistering);
+                              valid = checkCredentials(login, loginpass);
                               countRegistering++;
                         }
+                        
+                        
                         if (valid) {
                               System.out.println("\nYou may now log in.");
                   
@@ -111,6 +116,27 @@ public class menuImplemented {
             
             
       }
+      public static int collectCredentials(String username, String password, int countUsers){
+            String credentialsArray[] = new String[20];
+            while (countUsers==0) {
+                  credentialsArray[0] = username;
+                  credentialsArray[1] = password;
+                  countUsers++;
+            } if (countUsers==1) {
+                  credentialsArray[2] = username;
+                  credentialsArray[3] = password;
+                  countUsers++;
+            } if (countUsers==2) {
+                  credentialsArray[4] = username;
+                  credentialsArray[5] = password;
+                  countUsers++;
+            } if (countUsers==3) {
+                  credentialsArray[6] = username;
+                  credentialsArray[7] = password;
+                  countUsers++;
+            }
+            return countUsers;
+      }
       
       public static boolean loginUser(String username, String password, int countLogins) {
             System.out.println("Login below");
@@ -142,8 +168,10 @@ public class menuImplemented {
             return loggedIn;
       }
       
-      //method to register new user login credentials.
-      public static boolean registerUser(String username, String password) {
+      
+      
+      //method check credentials
+      public static boolean checkCredentials(String username, String password) {
             
             boolean validUsername = ((username.contains("1")) || (username.contains("2")) ||
                     (username.contains("3")) || (username.contains("4")) ||
