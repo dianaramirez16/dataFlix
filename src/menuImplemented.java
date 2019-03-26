@@ -45,21 +45,21 @@ public class menuImplemented {
                   
                   System.out.println(printMenu());
                   int optionToContinue = scan1.nextInt();
-                  
-                  do {
+      
+                  while (optionToContinue==1) {
                         System.out.println("You are already registered, would you like to try another option?");
                         System.out.println(printMenu());
                         optionToContinue = scan1.nextInt();
-                  } while (optionToContinue==1);
-                  
-                  do {
+                  }
+      
+                  while (optionToContinue==2) {
                        System.out.println("You are already logged in, please choose another option.");
                         System.out.println(printMenu());
                         optionToContinue = scan1.nextInt();
-                  } while (optionToContinue==2);
+                  }
                   
                   if (optionToContinue==3) {
-                        scan1.next(); //frees up scanner
+                        //scan1.next(); //frees up scanner
                         watchMovie();
                   }
                   
@@ -183,7 +183,7 @@ public class menuImplemented {
       public static String formatMovieDuration ( int minutes){
             String time;
             if (minutes > 60) {
-                  time = minutes / 60 + "h " + minutes % 60 + "m";
+                  time = minutes / 60 + "h" + minutes % 60 + "m";
                   return time;
             } else return null;
       }
@@ -214,14 +214,14 @@ public class menuImplemented {
       
       public static void watchMovie(){
             //user will pick int from 1-18 (array holds 0-17)
-            
+            scan1.nextLine();
             for (int i = 1; i<18; i++ ){  //prints array
-                  String s ="\t" + i + "\t" + (myMovieArray[i].getMovieTitle()) +" " +(myMovieArray[i].getMovieReleaseYear()) + " " +
-                          (myMovieArray[i].getMovieDuration()) + " " + (myMovieArray[i].getMovieGenre()) + " " + (myMovieArray[i].getMovieRating());
+                  String s ="\t" + i + ".\t'" + (myMovieArray[i].getMovieTitle()) +"', (" +(myMovieArray[i].getMovieReleaseYear()) + "). Duration: " +
+                          (myMovieArray[i].getMovieDuration()) + " Genre: " + (myMovieArray[i].getMovieGenre()) + ", Rating: " + (myMovieArray[i].getMovieRating()) + "/10";
                   System.out.println(s);
             }
             
-            System.out.println("Search for a movie by title: ");
+            System.out.println("\nSearch for a movie by title: ");
             String movieSearched = scan1.nextLine();
             int movieIndex = searchMovie(movieSearched);
             if (movieIndex!=0) {
