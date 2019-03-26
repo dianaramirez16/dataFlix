@@ -227,43 +227,41 @@ public class menuImplemented {
             System.out.println("\nWould you like to search for a movie by title (ENTER 1) or by genre(ENTER 2)?");
             int searchByValue = scan1.nextInt();
             while (searchByValue ==2) {
-            
-            }
-            
-            System.out.println("\nEnter the title you would like to search for: ");
-            String movieSearched = scan1.nextLine();
-            int movieIndex = searchMovie(movieSearched);
-            
-            if (movieIndex!=0) {
-                  System.out.println("movieindex variable: " + movieIndex);
-                  CreateMovie temp = myMovieArray[movieIndex];
-                  //create shallow copy & replace variables below in push methods
+                  System.out.println("\nEnter the title you would like to search for: ");
+                  String titleSearched = scan1.nextLine();
+                  int movieIndex = searchMovie(titleSearched);
       
-                  //horror, comedy, action, anime
-                  if (temp.getMovieGenre().equals("Horror")) {
-                        genreArray[0]++;
-                  } else if (temp.getMovieGenre().equals("Comedy")) {
-                        genreArray[1]++;
-                  } else if (temp.getMovieGenre().equals("Action")) {
-                        genreArray[2]++;
-                  } else if (temp.getMovieGenre().equals("Anime")) {
-                        genreArray[3]++;
+                  if (movieIndex<18) {
+                        System.out.println("movieIndex variable returned by searchMovie: " + movieIndex);
+                        CreateMovie temp = myMovieArray[movieIndex];
+                        //create shallow copy & replace variables below in push methods
+            
+                        //horror, comedy, action, anime
+                        if (temp.getMovieGenre().equals("Horror")) {
+                              genreArray[0]++;
+                        } else if (temp.getMovieGenre().equals("Comedy")) {
+                              genreArray[1]++;
+                        } else if (temp.getMovieGenre().equals("Action")) {
+                              genreArray[2]++;
+                        } else if (temp.getMovieGenre().equals("Anime")) {
+                              genreArray[3]++;
+                        }
+            
+                        //countMovieTitle(accepts movie object;
+                        System.out.println("You have watched: " + temp.getMovieTitle());
+                        arrayStack.push(temp); //adds to stack
+                        circularQueue.offer(temp);  //adds to queue
+            
                   }
-      
-                  //countMovieTitle(accepts movie object;
-                  System.out.println("You have watched: " + temp.getMovieTitle());
-                  arrayStack.push(temp); //adds to stack
-                  circularQueue.offer(temp);  //adds to queue
                   
-      
-                  //instantiate global genre array, increment whenever it's watched
             }
       }
       
-      public static int searchMovie(String movieSearched) {
+      public static int searchMovie(String titleSearched) {
             int movieIndex = 0;
             for (int i =0; i<myMovieArray.length; i++) {
-                  if (movieSearched.equals(myMovieArray[i])) {
+                  if (titleSearched.equals(myMovieArray[i])) {
+                        System.out.print("Movies found: " + myMovieArray[i].getMovieTitle());
                         movieIndex = i;
                   } else {
                         movieIndex=0;
