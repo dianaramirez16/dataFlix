@@ -120,10 +120,13 @@ public class menuImplemented {
                   }
             } else {
                   countAttempts++;
+                  for( int i = 0; i <credentialsArray.length; i++) {
+                        System.out.println(credentialsArray[i]);
+                  }
                   if (countAttempts<3){
                         collectCredentials(); //prompts user to enter credentials all over again
                   } else {
-                        int randomN = random.nextInt(999999) + 0;
+                        int randomN = random.nextInt(9999999) + 0;
                         username = userLastName+randomN;
                         password = "password!";
                         System.out.println("5count attempts: " + countAttempts);
@@ -158,7 +161,7 @@ public class menuImplemented {
                   valid=false;
                   
                   System.out.println("2count attempts: " + countAttempts);
-            } else if (validPassword==false) {
+            } else if (validPassword==false && countAttempts<=2) {
                   System.out.println("Your password does not fulfill the requirements. It must be longer than 8 characters " +
                           "\nand contain a special character, such as ! or @. \nPress ENTER and try again.");
                   valid = false;
