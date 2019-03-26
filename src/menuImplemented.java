@@ -19,8 +19,9 @@ public class menuImplemented {
       static CreateMovie[] myMovieArray; //holds movie objects
       static ArrayStack arrayStack; //stack
       static CircularQueue circularQueue; //queue
-      static int countUsers=0, countAttempts=1;;
+      static int countUsers=0, countAttempts=0;;
       static String credentialsArray[] = new String[20];
+      static int[] genreArray = {0,0,0,0}; //horror, comedy, action, anime
       
       public static void main(String[] args) {
             
@@ -42,8 +43,8 @@ public class menuImplemented {
                           "\n7. Most watched Movie" +
                           "\n8. Most watched Genre" +
                           "\n9. Log Out\n--------------\n\n");
-                        optionToRegister = scan1.nextInt();
-                        
+                  optionToRegister = scan1.nextInt();
+                  
                   if (optionToRegister==1) {
                         collectCredentials(); //method stores credentials in array
                         
@@ -60,7 +61,7 @@ public class menuImplemented {
                           "\n7. Most watched Movie" +
                           "\n8. Most watched Genre" +
                           "\n9. Log Out\n--------------\n\n");
-                        int optionToLogin = scan1.nextInt();
+                  int optionToLogin = scan1.nextInt();
                   if (optionToLogin==1) {
                         System.out.println("You are already registered, would you like to register another user? Yes-1 No-2");
                         int optionToRegisterAgain = scan1.nextInt();
@@ -72,7 +73,7 @@ public class menuImplemented {
                   
                   //loop to verify login credentials
                   
-            
+                  
             } while (scan1.nextInt()!=99);   ///ends do while loop
       }
       
@@ -81,13 +82,13 @@ public class menuImplemented {
             scan1.nextLine();  //prepares scanner for next input
             System.out.println("Please register your login credentials below. \nEnter your first name: ");
             userFirstName = scan1.nextLine();
-      
+            
             System.out.println("Enter your last name: ");
             userLastName = scan1.nextLine();
-      
+            
             System.out.println("Username MUST contain at least one digit (0-9).\nEnter username:");
             username = scan1.nextLine();
-      
+            
             System.out.println("Choose a password. It must contain at least one special character (! @ # $ % ^ & * or ?) \nEnter password:");
             password = scan1.nextLine();
             
@@ -119,7 +120,7 @@ public class menuImplemented {
                   }
             } else {
                   countAttempts++;
-                  if (countAttempts>3){
+                  if (countAttempts<3){
                         collectCredentials(); //prompts user to enter credentials all over again
                   } else {
                         int randomN = random.nextInt(999999) + 0;
@@ -133,7 +134,7 @@ public class menuImplemented {
                   
             }
       }
-  
+      
       
       
       //method checks credentials
@@ -145,8 +146,8 @@ public class menuImplemented {
                     (username.contains("7")) || (username.contains("8")) ||
                     (username.contains("9")) || (username.contains("0")));
             boolean validPassword = ((password.length()>7) && (password.contains("!")) || (password.contains("@")) || (password.contains("#")) ||
-                            (password.contains("$")) || (password.contains("%")) || (password.contains("^")) ||
-                            (password.contains("&")) || (password.contains("*")) || (password.contains("?")));
+                    (password.contains("$")) || (password.contains("%")) || (password.contains("^")) ||
+                    (password.contains("&")) || (password.contains("*")) || (password.contains("?")));
             boolean valid = false;
             if ((validPassword==false)&&(validUsername==false)) {
                   System.out.println("Neither your username nor your password fulfill the requirements, Press ENTER and try again.");
@@ -164,7 +165,7 @@ public class menuImplemented {
                   
                   System.out.println("count attempts: " + countAttempts);
             } else {
-            System.out.println("Thank you. \nYour login credentials are set. username: "+username + "\t password: " + password);
+                  System.out.println("Thank you. \nYour login credentials are set. username: "+username + "\t password: " + password);
                   System.out.println("\nYou may now log in.");
                   System.out.println("count attempts: " + countAttempts);
                   valid=true;
@@ -218,24 +219,57 @@ public class menuImplemented {
             CreateMovie movie17 = new CreateMovie("Deadpool", 2016, formatMovieDuration(108), "Action", 8.0);
             CreateMovie movie18 = new CreateMovie("The Fifth Element", 1997, formatMovieDuration(126), "Action", 7.7 );
             myMovieArray = new CreateMovie[] {movie1, movie2, movie3, movie4, movie5, movie6, movie7, movie8, movie9, movie10, movie11, movie12, movie13, movie14, movie15, movie16, movie17, movie18};
+            
       }
       
       public static String watchMovie(){
             //user will pick int from 1-18 (array holds 0-17)
             System.out.println("Pick a movie between 1-18: ");
+            //if you would like to exit, break;
+            
             for (int i = 0; i<18; i++ ){  //prints array
                   String s = i + "" + (myMovieArray[i].getMovieTitle()) + "\n";
                   System.out.println(s);
-                  //
+                  //this string only holds movie title
             }
             
             int moviePicked = scan1.nextInt();
-            arrayStack.push(myMovieArray[moviePicked-1]); //adds to stack
-            circularQueue.offer((myMovieArray[moviePicked-1]));  //adds to queue
+            CreateMovie temp = myMovieArray[moviePicked];
+            //temp CreateMovie selected = movie from movie array at index moviePicked
+            //create shallow copy & replace variables below in push methods
             
-            return "You have watched: " + myMovieArray[moviePicked-1].getMovieTitle();
+            //horror, comedy, action, anime
+            if (temp.getMovieGenre().equals("Horror")) {
+                  genreArray[0]++;
+                  //this statement will match the string inside the movie object and incrememnt appropritate counter
+                  //if statement for each genre
+            } else if (temp.getMovieGenre().equals("Comedy")) {
+                  genreArray[1]++;
+            } else if (temp.getMovieGenre().equals("Action")) {
+                  genreArray[2]++;
+            } else if (temp.getMovieGenre().equals("Anime")) {
+                  genreArray[3]++;
+            }
+            
+            //countMovieTitle(accepts movie object;
+            
+            arrayStack.push(temp); //adds to stack
+            circularQueue.offer(temp);  //adds to queue
+            return "You have watched: " + temp.getMovieTitle();
+            
+            //instantiate global genre array, increment whenever it's watched
+      }
+      
+      public void countMovieTitle(CreateMovie movie) {
+            //create global array to countMovies watched
+            //string temp = movie.getMOvieTitle();
+            //bunch of switch statements
+            
             
       }
+      
+      
+      
       
       public static void printStack() { //
             for (int i = arrayStack.TOS; i>0; i-- ){
@@ -250,6 +284,8 @@ public class menuImplemented {
                   String s = i + "" + (myMovieArray[i].getMovieTitle()) + "\n";
                   System.out.println(s);
             }
+            
+     
       
       /*
       public String checkGenre(String subjecttemp){
@@ -263,6 +299,7 @@ public class menuImplemented {
             int actionCounter;
             int animeCounter;
             
+            // create global genre counter array
             
              this will reference the array the movies are stored in *************
             for (int i=0; i<movieList.length(); i++) {
