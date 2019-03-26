@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6aea0c33-ef5b-41ca-915c-889fe226713c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/ArrayStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ArrayStack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menuImplemented.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuImplemented.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,11 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ArrayStack.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+            <state relative-caret-position="221">
+              <caret line="13" column="7" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -66,19 +66,15 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/menuImplemented.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="143" column="51" lean-forward="true" selection-start-line="143" selection-start-column="51" selection-end-line="143" selection-end-column="51" />
+            <state relative-caret-position="252">
+              <caret line="121" column="33" selection-start-line="121" selection-start-column="18" selection-end-line="121" selection-end-column="33" />
               <folding>
                 <element signature="e#0#9975#0" expanded="true" />
                 <element signature="imports" expanded="true" />
-                <element signature="method#formatMovieDuration#0;class#menuImplemented#0" />
-                <element signature="method#createMovies#0;class#menuImplemented#0" />
-                <element signature="method#watchMovie#0;class#menuImplemented#0" />
-                <element signature="method#printStack#0;class#menuImplemented#0" />
-                <element signature="method#printQueue#0;class#menuImplemented#0" />
+                <element signature="method#printQueue#0;class#menuImplement#0" />
               </folding>
             </state>
           </provider>
@@ -101,6 +97,8 @@
       <find>countUsers</find>
       <find>countAttempts</find>
       <find>first</find>
+      <find>countattempts</find>
+      <find>countattempts++</find>
     </findStrings>
     <replaceStrings>
       <replace>movieDuration</replace>
@@ -120,8 +118,8 @@
         <option value="$PROJECT_DIR$/src/bareBonesStack.java" />
         <option value="$PROJECT_DIR$/src/CreateMovie.java" />
         <option value="$PROJECT_DIR$/src/CircularQueue.java" />
-        <option value="$PROJECT_DIR$/src/menuImplemented.java" />
         <option value="$PROJECT_DIR$/src/ArrayStack.java" />
+        <option value="$PROJECT_DIR$/src/menuImplemented.java" />
       </list>
     </option>
   </component>
@@ -139,7 +137,7 @@
     <panes />
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553568278810" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553568807369" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
@@ -184,7 +182,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="835" y="2" width="1092" height="1045" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.15755053" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -257,26 +254,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/menuImplemented.java">
+    <entry file="file://$PROJECT_DIR$/src/ArrayStack.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="143" column="51" lean-forward="true" selection-start-line="143" selection-start-column="51" selection-end-line="143" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#9975#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="method#formatMovieDuration#0;class#menuImplemented#0" />
-            <element signature="method#createMovies#0;class#menuImplemented#0" />
-            <element signature="method#watchMovie#0;class#menuImplemented#0" />
-            <element signature="method#printStack#0;class#menuImplemented#0" />
-            <element signature="method#printQueue#0;class#menuImplemented#0" />
-          </folding>
+        <state relative-caret-position="221">
+          <caret line="13" column="7" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ArrayStack.java">
+    <entry file="file://$PROJECT_DIR$/src/menuImplemented.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+        <state relative-caret-position="252">
+          <caret line="121" column="33" selection-start-line="121" selection-start-column="18" selection-end-line="121" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#9975#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#printQueue#0;class#menuImplement#0" />
+          </folding>
         </state>
       </provider>
     </entry>
