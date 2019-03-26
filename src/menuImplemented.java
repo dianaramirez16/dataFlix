@@ -48,16 +48,14 @@ public class menuImplemented {
                   
                   while (optionToContinue==1) {
                         System.out.println("You are already registered, would you like to try another option?");
+                        System.out.println(printMenu());
+                        optionToContinue = scan1.nextInt();
                   }
-                  System.out.println(printMenu());
-                  optionToContinue = scan1.nextInt();
-                  
                   if (optionToContinue==2) {
                        System.out.println("You are already logged in, please choose another option.");
+                        System.out.println(printMenu());
+                        optionToContinue = scan1.nextInt();
                   }
-                  System.out.println(printMenu());
-                  optionToContinue = scan1.nextInt();
-                  
                   if (optionToContinue==3) {
                         watchMovie();
                   }
@@ -74,7 +72,7 @@ public class menuImplemented {
                     "\n6. Number of times Each Movie has been Watched" +
                     "\n7. Most watched Movie" +
                     "\n8. Most watched Genre" +
-                    "\n9. Log Out\n--------------\n\n";
+                    "\n9. Log Out\n--------------\n";
       }
       
       public static void collectCredentials(){
@@ -214,7 +212,7 @@ public class menuImplemented {
       public static void watchMovie(){
             //user will pick int from 1-18 (array holds 0-17)
             
-            for (int i = 0; i<19; i++ ){  //prints array
+            for (int i = 1; i<20; i++ ){  //prints array
                   String s ="\t" + i + "\t" + (myMovieArray[i].getMovieTitle());
                   System.out.println(s);
                   //this string only holds movie title
