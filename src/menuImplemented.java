@@ -12,6 +12,7 @@
  */
 import java.util.*;
 import java.util.Random;
+
 public class menuImplemented {
       static Random random = new Random();
       static Scanner scan1 = new Scanner(System.in); //global scanner
@@ -57,9 +58,9 @@ public class menuImplemented {
                         System.out.println(printMenu());
                         optionToContinue = scan1.nextInt();
                   }
-                  
+                  scan1.next(); //frees up scanner
                   while (optionToContinue==3) {
-                        scan1.next(); //frees up scanner
+                        
                         watchMovie();
                         
                   }
@@ -261,7 +262,7 @@ public class menuImplemented {
       public static int searchMovie(String titleSearched) {
             int movieIndex = 0;
             for (int i =0; i<myMovieArray.length; i++) {
-                  if (titleSearched.equals(myMovieArray[i])) {
+                  if (titleSearched.toLowerCase().equals(myMovieArray[i].getMovieTitle().toLowerCase())) {
                         System.out.print("Movies found: " + myMovieArray[i].getMovieTitle());
                         movieIndex = i;
                   } else {
