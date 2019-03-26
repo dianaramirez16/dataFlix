@@ -53,14 +53,15 @@ public class menuImplemented {
                   }
       
                   while (optionToContinue==2) {
-                       System.out.println("You are already logged in, please choose another option.");
+                        System.out.println("You are already logged in, please choose another option.");
                         System.out.println(printMenu());
                         optionToContinue = scan1.nextInt();
                   }
                   
-                  if (optionToContinue==3) {
-                        //scan1.next(); //frees up scanner
+                  while (optionToContinue==3) {
+                        scan1.next(); //frees up scanner
                         watchMovie();
+                        
                   }
                   
             } while (scan1.nextInt()!=99);   ///ends do while loop
@@ -216,14 +217,23 @@ public class menuImplemented {
             //user will pick int from 1-18 (array holds 0-17)
             scan1.nextLine();
             for (int i = 1; i<18; i++ ){  //prints array
-                  String s ="\t" + i + ".\t'" + (myMovieArray[i].getMovieTitle()) +"', (" +(myMovieArray[i].getMovieReleaseYear()) + "). Duration: " +
-                          (myMovieArray[i].getMovieDuration()) + " Genre: " + (myMovieArray[i].getMovieGenre()) + ", Rating: " + (myMovieArray[i].getMovieRating()) + "/10";
+                  String s ="\t" + i + ".\t'" + (myMovieArray[i].getMovieTitle()) +
+                          "', (" +(myMovieArray[i].getMovieReleaseYear()) +
+                          "). Duration: " + (myMovieArray[i].getMovieDuration()) +
+                          " Genre: " + (myMovieArray[i].getMovieGenre()) +
+                          ", Rating: " + (myMovieArray[i].getMovieRating()) + "/10";
                   System.out.println(s);
             }
+            System.out.println("\nWould you like to search for a movie by title (ENTER 1) or by genre(ENTER 2)?");
+            int searchByValue = scan1.nextInt();
+            while (searchByValue ==2) {
             
-            System.out.println("\nSearch for a movie by title: ");
+            }
+            
+            System.out.println("\nEnter the title you would like to search for: ");
             String movieSearched = scan1.nextLine();
             int movieIndex = searchMovie(movieSearched);
+            
             if (movieIndex!=0) {
                   System.out.println("movieindex variable: " + movieIndex);
                   CreateMovie temp = myMovieArray[movieIndex];
@@ -232,8 +242,6 @@ public class menuImplemented {
                   //horror, comedy, action, anime
                   if (temp.getMovieGenre().equals("Horror")) {
                         genreArray[0]++;
-                        //this statement will match the string inside the movie object and incrememnt appropritate counter
-                        //if statement for each genre
                   } else if (temp.getMovieGenre().equals("Comedy")) {
                         genreArray[1]++;
                   } else if (temp.getMovieGenre().equals("Action")) {
