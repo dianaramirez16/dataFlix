@@ -39,7 +39,6 @@ public class menuImplemented {
                   
                   if (optionToRegister==1) {
                         collectCredentials(); //method stores credentials in array
-                        break;
                   } else { //if option 1 is not entered
                         System.out.println("You do not have access to this feature until you are registered.");
                   }
@@ -49,14 +48,16 @@ public class menuImplemented {
                   
                   while (optionToContinue==1) {
                         System.out.println("You are already registered, would you like to try another option?");
-                        
-                        printMenu();
                   }
+                  System.out.println(printMenu());
+                  optionToContinue = scan1.nextInt();
+                  
                   if (optionToContinue==2) {
                        System.out.println("You are already logged in, please choose another option.");
-                       break;
                   }
-                  printMenu();
+                  System.out.println(printMenu());
+                  optionToContinue = scan1.nextInt();
+                  
                   if (optionToContinue==3) {
                         watchMovie();
                   }
@@ -65,7 +66,7 @@ public class menuImplemented {
       }
       
       public static String printMenu(){
-            return "1. Register account" +
+            return "\n1. Register account" +
                     "\n2. Login " +
                     "\n3. Watch a movie" +
                     "\n4. View Complete Watch History" + //first in first out, lists movies chronologically order
@@ -155,7 +156,7 @@ public class menuImplemented {
             } else if ((validPassword)&&(validUsername)&&countAttempts<2) {
                   
                   System.out.println("Thank you. \nYour login credentials are set. username: "+username + "\t password: " + password);
-                  System.out.println("\nYou may now log in.");
+                  System.out.println("\nYou are now logged in.");
                   valid=true;
             }
             return valid;
