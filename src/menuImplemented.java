@@ -210,7 +210,7 @@ public class menuImplemented {
             
       }
       
-      public static String watchMovie(){
+      public static void watchMovie(){
             //user will pick int from 1-18 (array holds 0-17)
             
             for (int i = 0; i<19; i++ ){  //prints array
@@ -241,15 +241,13 @@ public class menuImplemented {
                   }
       
                   //countMovieTitle(accepts movie object;
-      
+                  System.out.println("You have watched: " + temp.getMovieTitle());
                   arrayStack.push(temp); //adds to stack
                   circularQueue.offer(temp);  //adds to queue
-                  return "You have watched: " + temp.getMovieTitle();
+                  
       
                   //instantiate global genre array, increment whenever it's watched
             }
-            
-            
       }
       
       public static int searchMovie(String movieSearched) {
