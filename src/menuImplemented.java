@@ -100,23 +100,24 @@ public class menuImplemented {
                         credentialsArray[3] = password;
                         countUsers++;
       
-                  for( int i = 0; i <credentialsArray.length; i++) { //checks credentials array
+                  for( int i = 0; i <9; i++) { //checks credentials array
                         System.out.println(credentialsArray[i]);
                   }
+                  System.out.println("count users: " + countUsers);
       
-            } else if ((checkCredentials(username,password))&&(countUsers==1)) {
+            } else if ((countUsers==1)) {
                         credentialsArray[4] = userFirstName;
                         credentialsArray[5] = userLastName;
                         credentialsArray[6] = username;
                         credentialsArray[7] = password;
                         countUsers++;
-            } else if ((checkCredentials(username,password))&&(countUsers==2)) {
+            } else if ((countUsers==2)) {
                         credentialsArray[8] = userFirstName;
                         credentialsArray[9] = userLastName;
                         credentialsArray[10] = username;
                         credentialsArray[11] = password;
                         countUsers++;
-            } else if ((checkCredentials(username,password))&&(countUsers==3)) {
+            } else if ((countUsers==3)) {
                         credentialsArray[12] = userFirstName;
                         credentialsArray[13] = userLastName;
                         credentialsArray[14] = username;
@@ -155,22 +156,22 @@ public class menuImplemented {
                     (password.contains("&")) || (password.contains("*")) || (password.contains("?")));
             
             boolean valid = false;
-            if ((validPassword==false)&&(validUsername==false)) {
+            if ((validPassword==false)&&(validUsername==false)&&countAttempts<2) {
                   System.out.println("Neither your username nor your password fulfill the requirements, Press ENTER and try again.");
                   System.out.println("1count attempts: " + countAttempts);
-            } else if (validUsername==false) {
+            } else if (validUsername==false &&countAttempts<2) {
                   System.out.println("Your username does not fulfill the requirements. It must be unique and contain a digit 1-9. " +
                           "\nPress ENTER and try again.");
                   valid=false;
                   
                   System.out.println("2count attempts: " + countAttempts);
-            } else if (validPassword==false) {
+            } else if (validPassword==false&&countAttempts<2) {
                   System.out.println("Your password does not fulfill the requirements. It must be longer than 8 characters " +
                           "\nand contain a special character, such as ! or @. \nPress ENTER and try again.");
                   valid = false;
                   
                   System.out.println("3count attempts: " + countAttempts);
-            } else {
+            } else if ((validPassword)&&(validUsername)&&countAttempts<2) {
                   
                   System.out.println("Thank you. \nYour login credentials are set. username: "+username + "\t password: " + password);
                   System.out.println("\nYou may now log in.");
