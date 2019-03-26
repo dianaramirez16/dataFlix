@@ -214,9 +214,9 @@ public class menuImplemented {
       }
       
       public static void watchMovie(){
-            //user will pick int from 1-18 (array holds 0-17)
-            scan1.nextLine();
-            for (int i = 1; i<18; i++ ){  //prints array
+            
+            
+            for (int i = 0; i<18; i++ ){  //prints array
                   String s ="\t" + i + ".\t'" + (myMovieArray[i].getMovieTitle()) +
                           "', (" +(myMovieArray[i].getMovieReleaseYear()) +
                           "). Duration: " + (myMovieArray[i].getMovieDuration()) +
@@ -227,6 +227,7 @@ public class menuImplemented {
             System.out.println("\nWould you like to search for a movie by title (ENTER 1) or by genre(ENTER 2)?");
             int searchByValue = scan1.nextInt();
             while (searchByValue ==2) {
+                  scan1.nextLine();
                   System.out.println("\nEnter the title you would like to search for: ");
                   String titleSearched = scan1.nextLine();
                   int movieIndex = searchMovie(titleSearched);
