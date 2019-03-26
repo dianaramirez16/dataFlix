@@ -113,12 +113,6 @@ public class menuImplemented {
                         credentialsArray[2] = username;
                         credentialsArray[3] = password;
                         countUsers++;
-      
-                  for( int i = 0; i <9; i++) { //checks credentials array
-                        System.out.println(credentialsArray[i]);
-                  }
-                  System.out.println("count users: " + countUsers);
-      
             } else if ((countUsers==1)) {
                         credentialsArray[4] = userFirstName;
                         credentialsArray[5] = userLastName;
@@ -131,12 +125,6 @@ public class menuImplemented {
                         credentialsArray[10] = username;
                         credentialsArray[11] = password;
                         countUsers++;
-            } else if ((countUsers==3)) {
-                        credentialsArray[12] = userFirstName;
-                        credentialsArray[13] = userLastName;
-                        credentialsArray[14] = username;
-                        credentialsArray[15] = password;
-                        countUsers++;
             } else {
                   countAttempts++;
                   if (countAttempts<3){
@@ -146,7 +134,7 @@ public class menuImplemented {
                         int randomN = random.nextInt(999999) + 0;
                         username = userLastName+randomN;
                         password = "password!";
-                        System.out.println("5count attempts: " + countAttempts);
+                        
                         System.out.println("\nDue to too many failed attempts, you have been logged in using temporary credentials. Please see below:" +
                                 "\nUsername: " + username + "\nPassword: " + password+ "\n\nYou may now access the rest of the menu.");
                   }
@@ -172,24 +160,18 @@ public class menuImplemented {
             boolean valid = false;
             if ((validPassword==false)&&(validUsername==false)&&countAttempts<2) {
                   System.out.println("Neither your username nor your password fulfill the requirements, Press ENTER and try again.");
-                  System.out.println("1count attempts: " + countAttempts);
             } else if (validUsername==false &&countAttempts<2) {
                   System.out.println("Your username does not fulfill the requirements. It must be unique and contain a digit 1-9. " +
                           "\nPress ENTER and try again.");
                   valid=false;
-                  
-                  System.out.println("2count attempts: " + countAttempts);
             } else if (validPassword==false&&countAttempts<2) {
                   System.out.println("Your password does not fulfill the requirements. It must be longer than 8 characters " +
                           "\nand contain a special character, such as ! or @. \nPress ENTER and try again.");
                   valid = false;
-                  
-                  System.out.println("3count attempts: " + countAttempts);
             } else if ((validPassword)&&(validUsername)&&countAttempts<2) {
                   
                   System.out.println("Thank you. \nYour login credentials are set. username: "+username + "\t password: " + password);
                   System.out.println("\nYou may now log in.");
-                  System.out.println("4count attempts: " + countAttempts);
                   valid=true;
             }
             return valid;
@@ -247,10 +229,8 @@ public class menuImplemented {
       public static String watchMovie(){
             //user will pick int from 1-18 (array holds 0-17)
             System.out.println("Pick a movie between 1-18: ");
-            //if you would like to exit, break;
-            
             for (int i = 0; i<18; i++ ){  //prints array
-                  String s = i + "" + (myMovieArray[i].getMovieTitle()) + "\n";
+                  String s ="\t" + i + "\t" + (myMovieArray[i].getMovieTitle());
                   System.out.println(s);
                   //this string only holds movie title
             }

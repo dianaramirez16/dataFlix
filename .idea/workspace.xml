@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6aea0c33-ef5b-41ca-915c-889fe226713c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dataFlix/menuImplemented.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dataFlix/menuImplemented.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/menuImplemented.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuImplemented.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -70,11 +72,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/menuImplemented.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="80" column="37" lean-forward="true" selection-start-line="80" selection-start-column="37" selection-end-line="80" selection-end-column="37" />
+            <state relative-caret-position="250">
+              <caret line="165" column="30" lean-forward="true" selection-start-line="165" selection-start-column="30" selection-end-line="165" selection-end-column="30" />
               <folding>
                 <element signature="e#0#9975#0" expanded="true" />
                 <element signature="imports" expanded="true" />
+                <element signature="method#formatMovieDuration#0;class#menuImplemented#0" />
                 <element signature="method#printQueue#0;class#menuImplement#0" />
               </folding>
             </state>
@@ -102,6 +105,7 @@
       <find>countattempts++</find>
       <find>collectcredentials</find>
       <find>optionToLogin</find>
+      <find>&quot; + countAttempts);</find>
     </findStrings>
     <replaceStrings>
       <replace>movieDuration</replace>
@@ -141,7 +145,7 @@
     <panes />
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553575185598" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553579436117" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
@@ -213,7 +217,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32905483" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32905483" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32905483" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32905483" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -278,11 +282,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/menuImplemented.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="80" column="37" lean-forward="true" selection-start-line="80" selection-start-column="37" selection-end-line="80" selection-end-column="37" />
+        <state relative-caret-position="250">
+          <caret line="165" column="30" lean-forward="true" selection-start-line="165" selection-start-column="30" selection-end-line="165" selection-end-column="30" />
           <folding>
             <element signature="e#0#9975#0" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="method#formatMovieDuration#0;class#menuImplemented#0" />
             <element signature="method#printQueue#0;class#menuImplement#0" />
           </folding>
         </state>
