@@ -33,16 +33,8 @@ public class menuImplemented {
       public static void startMenu(){
             int optionToRegister;
             do {
-                  System.out.print("Hello, first-timer. Please select option 1 to get started with your new account." +
-                          "\n1. Register account" +
-                          "\n2. Login " +
-                          "\n3. Watch a movie" +
-                          "\n4. View Complete Watch History" + //first in first out, lists movies chronological order
-                          "\n5. View Most Recently Watched " + //last in first out, views last watched first
-                          "\n6. Number of times Each Movie has been Watched" +
-                          "\n7. Most watched Movie" +
-                          "\n8. Most watched Genre" +
-                          "\n9. Log Out\n--------------\n\n");
+                  System.out.print("Hello, first-timer. Please select option 1 to get started with your new account.");
+                  printMenu();
                   optionToRegister = scan1.nextInt();
                   
                   if (optionToRegister==1) {
@@ -52,31 +44,18 @@ public class menuImplemented {
                         System.out.println("You do not have access to this feature until you are registered.");
                   }
                   
-                  System.out.print("1. Register account" +
-                          "\n2. Login " +
-                          "\n3. Watch a movie" +
-                          "\n4. View Complete Watch History" + //first in first out, lists movies chronologically order
-                          "\n5. View Most Recently Watched " + //last in first out, views last watched first
-                          "\n6. Number of times Each Movie has been Watched" +
-                          "\n7. Most watched Movie" +
-                          "\n8. Most watched Genre" +
-                          "\n9. Log Out\n--------------\n\n");
+                  printMenu();
                   int optionToContinue = scan1.nextInt();
                   while (optionToContinue==1) {
                         System.out.println("You are already registered, would you like to try another option?");
-                        System.out.print("1. Register account" +
-                                "\n2. Login " +
-                                "\n3. Watch a movie" +
-                                "\n4. View Complete Watch History" + //first in first out, lists movies chronologically order
-                                "\n5. View Most Recently Watched " + //last in first out, views last watched first
-                                "\n6. Number of times Each Movie has been Watched" +
-                                "\n7. Most watched Movie" +
-                                "\n8. Most watched Genre" +
-                                "\n9. Log Out\n--------------\n\n");
+                        
+                        printMenu();
                   }
-                  while (optionToContinue==2) {
+                  if (optionToContinue==2) {
                        System.out.println("You are already logged in, please choose another option.");
+                       break;
                   }
+                  printMenu();
                   if (optionToContinue==3) {
                         watchMovie();
                   }
@@ -89,6 +68,18 @@ public class menuImplemented {
                   
                   
             } while (scan1.nextInt()!=99);   ///ends do while loop
+      }
+      
+      public static String printMenu(){
+            return "1. Register account" +
+                    "\n2. Login " +
+                    "\n3. Watch a movie" +
+                    "\n4. View Complete Watch History" + //first in first out, lists movies chronologically order
+                    "\n5. View Most Recently Watched " + //last in first out, views last watched first
+                    "\n6. Number of times Each Movie has been Watched" +
+                    "\n7. Most watched Movie" +
+                    "\n8. Most watched Genre" +
+                    "\n9. Log Out\n--------------\n\n";
       }
       
       public static void collectCredentials(){
