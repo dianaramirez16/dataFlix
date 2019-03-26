@@ -212,13 +212,13 @@ public class menuImplemented {
       public static void watchMovie(){
             //user will pick int from 1-18 (array holds 0-17)
             
-            for (int i = 1; i<20; i++ ){  //prints array
-                  String s ="\t" + i + "\t" + (myMovieArray[i].getMovieTitle());
+            for (int i = 1; i<18; i++ ){  //prints array
+                  String s ="\t" + i + "\t" + (myMovieArray[i].getMovieTitle()) +" " +(myMovieArray[i].getMovieReleaseYear()) + " " +
+                          (myMovieArray[i].getMovieDuration()) + " " + (myMovieArray[i].getMovieGenre()) + " " + (myMovieArray[i].getMovieRating());
                   System.out.println(s);
-                  //this string only holds movie title
             }
             
-            System.out.println("Search for a movie: ");
+            System.out.println("Search for a movie by title: ");
             String movieSearched = scan1.nextLine();
             int movieIndex = searchMovie(movieSearched);
             if (movieIndex!=0) {
