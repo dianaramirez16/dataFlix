@@ -120,7 +120,7 @@ public class menuImplemented {
                   }
             } else {
                   countAttempts++;
-                  for( int i = 0; i <credentialsArray.length; i++) {
+                  for( int i = 0; i <credentialsArray.length; i++) {  //tests array is storing credentials
                         System.out.println(credentialsArray[i]);
                   }
                   if (countAttempts<3){
@@ -168,6 +168,10 @@ public class menuImplemented {
                   
                   System.out.println("3count attempts: " + countAttempts);
             } else {
+                  for( int i = 0; i <credentialsArray.length; i++) {  //tests array is storing credentials
+                        System.out.println(credentialsArray[i]);
+                  }
+                  
                   System.out.println("Thank you. \nYour login credentials are set. username: "+username + "\t password: " + password);
                   System.out.println("\nYou may now log in.");
                   System.out.println("4count attempts: " + countAttempts);
