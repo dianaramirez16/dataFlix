@@ -1,4 +1,3 @@
-
 public class ArrayStack {
       
       // Storage for the Stack
@@ -27,6 +26,12 @@ public class ArrayStack {
 		this.theData[TOS] = obj;
 		return;*/
             return (this.movieList[++TOS] = movie);
+            /*
+            if (){
+              //searching through stack so that it checks for doubles of getMovieTitle
+              // this statement will be inside a for loop of size stack
+            }
+            // if there's a double, don't add*/
       }
       
       
@@ -34,7 +39,7 @@ public class ArrayStack {
             // This method deletes an element from the Stack
             // First check if there is an element to delete
             if(!isEmpty()) {
-			
+                  
                   CreateMovie temp = movieList[TOS--]; //saves data to temp
                   TOS--; //decrements TOS pointer
                   return temp; //returns element
