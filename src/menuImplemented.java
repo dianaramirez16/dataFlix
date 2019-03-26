@@ -39,11 +39,11 @@ public class menuImplemented {
                   
                   if (optionToRegister==1) {
                         collectCredentials(); //method stores credentials in array
-                        
+                        break;
                   } else { //if option 1 is not entered
                         System.out.println("You do not have access to this feature until you are registered.");
-                        break;
                   }
+                  
                   System.out.println(printMenu());
                   int optionToContinue = scan1.nextInt();
                   
@@ -113,7 +113,6 @@ public class menuImplemented {
             } else {
                   countAttempts++;
                   if (countAttempts<3){
-      
                         collectCredentials(); //prompts user to enter credentials all over again
                   } else {
                         int randomN = random.nextInt(999999) + 0;
@@ -213,21 +212,18 @@ public class menuImplemented {
       
       public static String watchMovie(){
             //user will pick int from 1-18 (array holds 0-17)
-            System.out.println("Search for a movie: ");
+            
             for (int i = 0; i<19; i++ ){  //prints array
                   String s ="\t" + i + "\t" + (myMovieArray[i].getMovieTitle());
                   System.out.println(s);
                   //this string only holds movie title
             }
+            int movieIndex;
+            System.out.println("Search for a movie: ");
             String movieSearched = scan1.nextLine();
-            for (int i =0; i<myMovieArray.length; i++) {
-                  if (movieSearched.equals(myMovieArray[i])) {
-                        int movieIndex = i;
-                        return temp;
-                  } else {
-                        System.out.println("Could not find a match, search again.");
-                  }
-            }
+            
+            
+            System.out.println("movieindex variable: " + movieIndex);
             CreateMovie temp = myMovieArray[movieIndex];
             //create shallow copy & replace variables below in push methods
             
@@ -244,13 +240,27 @@ public class menuImplemented {
                   genreArray[3]++;
             }
             
-            countMovieTitle(accepts movie object;
+            //countMovieTitle(accepts movie object;
             
             arrayStack.push(temp); //adds to stack
             circularQueue.offer(temp);  //adds to queue
             return "You have watched: " + temp.getMovieTitle();
             
             //instantiate global genre array, increment whenever it's watched
+      }
+      
+      public int searchMovie(String movieSearched) {
+            int movieIndex;
+            for (int i =0; i<myMovieArray.length; i++) {
+                  if (movieSearched.equals(myMovieArray[i])) {
+                        movieIndex = i;
+                  } else {
+                        System.out.println("Could not find a match, search again.");
+                        movieIndex=0;
+                  }
+                  
+            }
+            return movieIndex;
       }
       
       public void countMovieTitle(CreateMovie movie) {
@@ -261,7 +271,7 @@ public class menuImplemented {
             
       }
       
-      public static void printStack() { //
+      public void printStack() { //
             for (int i = arrayStack.TOS; i>0; i-- ){
                   String s = i + "" + (myMovieArray[i].getMovieTitle()) + "\n";
                   System.out.println(s);
@@ -269,7 +279,7 @@ public class menuImplemented {
             }
       }
       
-      public static void printQueue() { //
+      public void printQueue() { //
             for (int i = arrayStack.TOS; i > 0; i--) {
                   String s = i + "" + (myMovieArray[i].getMovieTitle()) + "\n";
                   System.out.println(s);
