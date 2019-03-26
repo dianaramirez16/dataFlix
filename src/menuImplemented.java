@@ -93,13 +93,17 @@ public class menuImplemented {
             password = scan1.nextLine();
             
             
-            
             if ((checkCredentials(username,password))&&(countUsers==0)) {  //if credentials are valid, store in array
                         credentialsArray[0] = userFirstName;
                         credentialsArray[1] = userLastName;
                         credentialsArray[2] = username;
                         credentialsArray[3] = password;
                         countUsers++;
+      
+                  for( int i = 0; i <credentialsArray.length; i++) { //checks credentials array
+                        System.out.println(credentialsArray[i]);
+                  }
+      
             } else if ((checkCredentials(username,password))&&(countUsers==1)) {
                         credentialsArray[4] = userFirstName;
                         credentialsArray[5] = userLastName;
@@ -120,11 +124,11 @@ public class menuImplemented {
                         countUsers++;
             } else {
                   countAttempts++;
-                  
                   if (countAttempts<3){
+      
                         collectCredentials(); //prompts user to enter credentials all over again
                   } else {
-                        int randomN = random.nextInt(9999999) + 0;
+                        int randomN = random.nextInt(999999) + 0;
                         username = userLastName+randomN;
                         password = "password!";
                         System.out.println("5count attempts: " + countAttempts);
@@ -149,6 +153,7 @@ public class menuImplemented {
             boolean validPassword = ((password.length()>7) && (password.contains("!")) || (password.contains("@")) || (password.contains("#")) ||
                     (password.contains("$")) || (password.contains("%")) || (password.contains("^")) ||
                     (password.contains("&")) || (password.contains("*")) || (password.contains("?")));
+            
             boolean valid = false;
             if ((validPassword==false)&&(validUsername==false)) {
                   System.out.println("Neither your username nor your password fulfill the requirements, Press ENTER and try again.");
@@ -166,11 +171,6 @@ public class menuImplemented {
                   
                   System.out.println("3count attempts: " + countAttempts);
             } else {
-                  
-                  
-                  for( int i = 0; i <credentialsArray.length; i++) {
-                        System.out.println(credentialsArray[i]);
-                  }
                   
                   System.out.println("Thank you. \nYour login credentials are set. username: "+username + "\t password: " + password);
                   System.out.println("\nYou may now log in.");
