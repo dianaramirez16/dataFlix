@@ -92,37 +92,35 @@ public class menuImplemented {
             System.out.println("Choose a password. It must contain at least one special character (! @ # $ % ^ & * or ?) \nEnter password:");
             password = scan1.nextLine();
             
-            if (checkCredentials(username,password,userLastName)) {  //if credentials are valid, store in array
-                  while (countUsers==0) {
+            
+            
+            if ((checkCredentials(username,password))&&(countUsers==0)) {  //if credentials are valid, store in array
                         credentialsArray[0] = userFirstName;
                         credentialsArray[1] = userLastName;
                         credentialsArray[2] = username;
                         credentialsArray[3] = password;
                         countUsers++;
-                  } if (countUsers==1) {
+            } else if ((checkCredentials(username,password))&&(countUsers==1)) {
                         credentialsArray[4] = userFirstName;
                         credentialsArray[5] = userLastName;
                         credentialsArray[6] = username;
                         credentialsArray[7] = password;
                         countUsers++;
-                  } if (countUsers==2) {
+            } else if ((checkCredentials(username,password))&&(countUsers==2)) {
                         credentialsArray[8] = userFirstName;
                         credentialsArray[9] = userLastName;
                         credentialsArray[10] = username;
                         credentialsArray[11] = password;
                         countUsers++;
-                  } if (countUsers==3) {
+            } else if ((checkCredentials(username,password))&&(countUsers==3)) {
                         credentialsArray[12] = userFirstName;
                         credentialsArray[13] = userLastName;
                         credentialsArray[14] = username;
                         credentialsArray[15] = password;
                         countUsers++;
-                  }
             } else {
                   countAttempts++;
-                  for( int i = 0; i <credentialsArray.length; i++) {  //tests array is storing credentials
-                        System.out.println(credentialsArray[i]);
-                  }
+                  
                   if (countAttempts<3){
                         collectCredentials(); //prompts user to enter credentials all over again
                   } else {
@@ -131,7 +129,7 @@ public class menuImplemented {
                         password = "password!";
                         System.out.println("5count attempts: " + countAttempts);
                         System.out.println("\nDue to too many failed attempts, you have been logged in using temporary credentials. Please see below:" +
-                                "\nUsername: " + username + "\nPassword: " + password);
+                                "\nUsername: " + username + "\nPassword: " + password+ "\n");
                   }
                   
                   
@@ -141,7 +139,7 @@ public class menuImplemented {
       
       
       //method checks credentials
-      public static boolean checkCredentials(String username, String password, String userLastName) {
+      public static boolean checkCredentials(String username, String password) {
             
             boolean validUsername = ((username.contains("1")) || (username.contains("2")) ||
                     (username.contains("3")) || (username.contains("4")) ||
@@ -161,14 +159,16 @@ public class menuImplemented {
                   valid=false;
                   
                   System.out.println("2count attempts: " + countAttempts);
-            } else if (validPassword==false && countAttempts<=2) {
+            } else if (validPassword==false) {
                   System.out.println("Your password does not fulfill the requirements. It must be longer than 8 characters " +
                           "\nand contain a special character, such as ! or @. \nPress ENTER and try again.");
                   valid = false;
                   
                   System.out.println("3count attempts: " + countAttempts);
             } else {
-                  for( int i = 0; i <credentialsArray.length; i++) {  //tests array is storing credentials
+                  
+                  
+                  for( int i = 0; i <credentialsArray.length; i++) {
                         System.out.println(credentialsArray[i]);
                   }
                   
