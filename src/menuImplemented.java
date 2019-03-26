@@ -34,7 +34,7 @@ public class menuImplemented {
             int optionToRegister;
             do {
                   System.out.print("Hello, first-timer. Please select option 1 to get started with your new account.");
-                  printMenu();
+                  System.out.println(printMenu());
                   optionToRegister = scan1.nextInt();
                   
                   if (optionToRegister==1) {
@@ -42,10 +42,11 @@ public class menuImplemented {
                         
                   } else { //if option 1 is not entered
                         System.out.println("You do not have access to this feature until you are registered.");
+                        break;
                   }
-                  
-                  printMenu();
+                  System.out.println(printMenu());
                   int optionToContinue = scan1.nextInt();
+                  
                   while (optionToContinue==1) {
                         System.out.println("You are already registered, would you like to try another option?");
                         
@@ -59,13 +60,6 @@ public class menuImplemented {
                   if (optionToContinue==3) {
                         watchMovie();
                   }
-                  
-                  //option 2 will never be "selected" user enters login process after registering is done.
-                  scan1.nextLine(); //prepares scanner for next input
-                  
-                  
-                  //loop to verify login credentials
-                  
                   
             } while (scan1.nextInt()!=99);   ///ends do while loop
       }
@@ -219,16 +213,22 @@ public class menuImplemented {
       
       public static String watchMovie(){
             //user will pick int from 1-18 (array holds 0-17)
-            System.out.println("Pick a movie between 1-18: ");
-            for (int i = 0; i<18; i++ ){  //prints array
+            System.out.println("Search for a movie: ");
+            for (int i = 0; i<19; i++ ){  //prints array
                   String s ="\t" + i + "\t" + (myMovieArray[i].getMovieTitle());
                   System.out.println(s);
                   //this string only holds movie title
             }
-            
-            int moviePicked = scan1.nextInt();
-            CreateMovie temp = myMovieArray[moviePicked];
-            //temp CreateMovie selected = movie from movie array at index moviePicked
+            String movieSearched = scan1.nextLine();
+            for (int i =0; i<myMovieArray.length; i++) {
+                  if (movieSearched.equals(myMovieArray[i])) {
+                        int movieIndex = i;
+                        return temp;
+                  } else {
+                        System.out.println("Could not find a match, search again.");
+                  }
+            }
+            CreateMovie temp = myMovieArray[movieIndex];
             //create shallow copy & replace variables below in push methods
             
             //horror, comedy, action, anime
@@ -244,7 +244,7 @@ public class menuImplemented {
                   genreArray[3]++;
             }
             
-            //countMovieTitle(accepts movie object;
+            countMovieTitle(accepts movie object;
             
             arrayStack.push(temp); //adds to stack
             circularQueue.offer(temp);  //adds to queue
@@ -260,9 +260,6 @@ public class menuImplemented {
             
             
       }
-      
-      
-      
       
       public static void printStack() { //
             for (int i = arrayStack.TOS; i>0; i-- ){
