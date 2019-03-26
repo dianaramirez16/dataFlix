@@ -55,16 +55,30 @@ public class menuImplemented {
                   System.out.print("1. Register account" +
                           "\n2. Login " +
                           "\n3. Watch a movie" +
-                          "\n4. View Complete Watch History" + //first in first out, lists movies chronologicall order
+                          "\n4. View Complete Watch History" + //first in first out, lists movies chronologically order
                           "\n5. View Most Recently Watched " + //last in first out, views last watched first
                           "\n6. Number of times Each Movie has been Watched" +
                           "\n7. Most watched Movie" +
                           "\n8. Most watched Genre" +
                           "\n9. Log Out\n--------------\n\n");
-                  int optionToLogin = scan1.nextInt();
-                  if (optionToLogin==1) {
-                        System.out.println("You are already registered, would you like to register another user? Yes-1 No-2");
-                        int optionToRegisterAgain = scan1.nextInt();
+                  int optionToContinue = scan1.nextInt();
+                  while (optionToContinue==1) {
+                        System.out.println("You are already registered, would you like to try another option?");
+                        System.out.print("1. Register account" +
+                                "\n2. Login " +
+                                "\n3. Watch a movie" +
+                                "\n4. View Complete Watch History" + //first in first out, lists movies chronologically order
+                                "\n5. View Most Recently Watched " + //last in first out, views last watched first
+                                "\n6. Number of times Each Movie has been Watched" +
+                                "\n7. Most watched Movie" +
+                                "\n8. Most watched Genre" +
+                                "\n9. Log Out\n--------------\n\n");
+                  }
+                  while (optionToContinue==2) {
+                       System.out.println("You are already logged in, please choose another option.");
+                  }
+                  if (optionToContinue==3) {
+                        watchMovie();
                   }
                   
                   //option 2 will never be "selected" user enters login process after registering is done.
@@ -80,16 +94,16 @@ public class menuImplemented {
       public static void collectCredentials(){
             String userFirstName, userLastName;
             scan1.nextLine();  //prepares scanner for next input
-            System.out.println("Please register your login credentials below. \nEnter your first name: ");
+            System.out.println("Please register your login credentials. Enter your first name: ");
             userFirstName = scan1.nextLine();
             
             System.out.println("Enter your last name: ");
             userLastName = scan1.nextLine();
             
-            System.out.println("Username MUST contain at least one digit (0-9).\nEnter username:");
+            System.out.println("Username MUST contain at least one digit (0-9). Enter username:");
             username = scan1.nextLine();
             
-            System.out.println("Choose a password. It must contain at least one special character (! @ # $ % ^ & * or ?) \nEnter password:");
+            System.out.println("Choose a password. It must contain at least one special character (! @ # $ % ^ & * or ?) Enter password:");
             password = scan1.nextLine();
             
             
@@ -134,7 +148,7 @@ public class menuImplemented {
                         password = "password!";
                         System.out.println("5count attempts: " + countAttempts);
                         System.out.println("\nDue to too many failed attempts, you have been logged in using temporary credentials. Please see below:" +
-                                "\nUsername: " + username + "\nPassword: " + password+ "\n");
+                                "\nUsername: " + username + "\nPassword: " + password+ "\n\nYou may now access the rest of the menu.");
                   }
                   
                   
