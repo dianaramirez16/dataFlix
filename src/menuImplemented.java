@@ -46,17 +46,20 @@ public class menuImplemented {
                   System.out.println(printMenu());
                   int optionToContinue = scan1.nextInt();
                   
-                  while (optionToContinue==1) {
+                  do {
                         System.out.println("You are already registered, would you like to try another option?");
                         System.out.println(printMenu());
                         optionToContinue = scan1.nextInt();
-                  }
-                  if (optionToContinue==2) {
+                  } while (optionToContinue==1);
+                  
+                  do {
                        System.out.println("You are already logged in, please choose another option.");
                         System.out.println(printMenu());
                         optionToContinue = scan1.nextInt();
-                  }
+                  } while (optionToContinue==2);
+                  
                   if (optionToContinue==3) {
+                        scan1.next(); //frees up scanner
                         watchMovie();
                   }
                   
