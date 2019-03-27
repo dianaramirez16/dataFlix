@@ -161,7 +161,7 @@ public class menuImplemented {
                   System.out.println("Neither your username nor your password fulfill the requirements, Press ENTER and try again.");
             } else if (validUsername==false &&countAttempts<2) {
                   System.out.println("Your username does not fulfill the requirements. It must be unique and contain a digit 1-9. " +
-                          "\nPress ENTER and try again.");
+                          "\nPress ENTER and try again.\n");
                   valid=false;
             } else if (validPassword==false&&countAttempts<2) {
                   System.out.println("Your password does not fulfill the requirements. It must be longer than 8 characters " +
