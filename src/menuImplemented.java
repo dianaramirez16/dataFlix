@@ -288,8 +288,8 @@ public class menuImplemented {
       }//ends movie Watch method
       
       public static void pushMovie(int movieIndex){
-            arrayStack.push(myMovieArray[movieIndex]); //adds to stack
             circularQueue.offer(myMovieArray[movieIndex]);  //adds to queue
+            arrayStack.push(myMovieArray[movieIndex]); //adds to stack
             countMovieTitle(myMovieArray[movieIndex]);  //counts times movie was watched
             //this if statement increments genre array counter
             //horror, comedy, action, anime

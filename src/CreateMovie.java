@@ -21,44 +21,44 @@ public class CreateMovie { //CAPITALIZE ***
       
       //get methods
       public String getMovieTitle () {
-            return movieTitle;
+            return this.movieTitle;
       }
       
       public int getMovieReleaseYear () {
-            return movieReleaseYear;
+            return this.movieReleaseYear;
       }
       
       public String getMovieDuration () {
-            return movieDuration;
+            return this.movieDuration;
       }
       
       public String getMovieGenre () {
-            return movieGenre;
+            return this.movieGenre;
       }
       
       public double getMovieRating () {
-            return movieRating;
+            return this.movieRating;
       }
       
       //set methods
       public void setMovieTitle (String movieTitle) {
-            movieTitle = movieTitle;
+            this.movieTitle = movieTitle;
       }
       
       public void setMovieReleaseYear (int movieReleaseYear) {
-            movieReleaseYear = movieReleaseYear;
+            this.movieReleaseYear = movieReleaseYear;
       }
       
       public void setMovieDuration (String movieDuration) {
-            movieDuration= movieDuration;
+            this.movieDuration= movieDuration;
       }
       
       public void setMovieGenre (String movieGenre) {
-            movieGenre = movieGenre;
+            this.movieGenre = movieGenre;
       }
       
       public void setMovieRating (double movieRating) {
-            movieRating = movieRating;
+            this.movieRating = movieRating;
       }
       
       
