@@ -33,16 +33,13 @@
                    // We can now call reallocate() to increase the capacity
                    return null;
              }
-		/*TOS++;	// Go to the proper index
-		this.theData[TOS] = obj;
-		return;*/
-             return (this.movieList[++TOS] = movie);
-            /*
-            if (){
-              //searching through stack so that it checks for doubles of getMovieTitle
-              // this statement will be inside a for loop of size stack
-            }
-            // if there's a double, don't add*/
+             for(int i=0; i<movieList.length; i++) {
+                   if (movie.equals(movieList[i])){
+                         return null;
+                   }
+             }
+             return (this.movieList[++TOS] = movie); //adds to stack
+            
        }
       
       

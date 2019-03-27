@@ -19,7 +19,7 @@ public class menuImplemented {
       static Scanner scan2 = new Scanner(System.in); //global string scanner
       static String username, password;
       static CreateMovie[] myMovieArray; //holds movie objects
-      static ArrayStack<CreateMovie> arrayStack= new ArrayStack<>(); //stack
+      static ArrayStack <CreateMovie> arrayStack= new ArrayStack<>(); //stack
       static CircularQueue circularQueue = new CircularQueue(); //queue
       static int countUsers=0, countAttempts=0;
       static String credentialsArray[] = new String[4];
