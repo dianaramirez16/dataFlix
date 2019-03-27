@@ -15,14 +15,18 @@ import java.util.Random;
 
 public class menuImplemented {
       static Random random = new Random();
-      static Scanner scan1 = new Scanner(System.in); //global scanner
+      static Scanner scan1 = new Scanner(System.in); //global int scanner
+      static Scanner scan2 = new Scanner(System.in); //global string scanner
       static String username, password;
       static CreateMovie[] myMovieArray; //holds movie objects
       static ArrayStack arrayStack; //stack
       static CircularQueue circularQueue; //queue
       static int countUsers=0, countAttempts=0;
-      static String credentialsArray[] = new String[20];
-      static int[] genreArray = {0,0,0,0}; //horror, comedy, action, anime
+      static String credentialsArray[] = new String[4];
+      static int[] genreArray = new int[4]; //horror, comedy, action, anime
+      static int[] watchedMovieArray = new int[17]; //stores movie counts
+      static int[] moviesPerGenre = new int[5]; //prints movies found through genre search
+      
       
       public static void main(String[] args) {
             
@@ -46,25 +50,44 @@ public class menuImplemented {
                   
                   System.out.println(printMenu());
                   int optionToContinue = scan1.nextInt();
-      
+                  
                   while (optionToContinue==1) {
                         System.out.println("You are already registered, would you like to try another option?");
                         System.out.println(printMenu());
                         optionToContinue = scan1.nextInt();
                   }
-      
+                  
                   while (optionToContinue==2) {
                         System.out.println("You are already logged in, please choose another option.");
                         System.out.println(printMenu());
                         optionToContinue = scan1.nextInt();
                   }
-                  scan1.next(); //frees up scanner
+                  //scan1.next(); //frees up scanner
                   while (optionToContinue==3) {
-                        
                         watchMovie();
-                        
+                        System.out.println(printMenu());
+                        optionToContinue = scan1.nextInt();
                   }
                   
+                  while (optionToContinue==4) {
+                        System.out.println("This is your watch history ordered from first watched to most recent at the end");
+                        System.out.println(circularQueue);
+                        System.out.println(printMenu());
+                        optionToContinue = scan1.nextInt();
+                  }
+                  
+                  while (optionToContinue==5) {
+                        System.out.println("This is your Recent Watched History");
+                        System.out.println(arrayStack);
+                        System.out.println(printMenu());
+                        optionToContinue = scan1.nextInt();
+                  }
+                  
+                  while (optionToContinue==6){
+                        for (int i =0; i<watchedMovieArray.length; i++){
+                              System.out.println(i);
+                        }
+                  }
             } while (scan1.nextInt()!=99);   ///ends do while loop
       }
       
@@ -82,38 +105,26 @@ public class menuImplemented {
       
       public static void collectCredentials(){
             String userFirstName, userLastName;
-            scan1.nextLine();  //prepares scanner for next input
+            //scan1.nextLine();  //prepares scanner for next input
             System.out.println("Please register your login credentials. Enter your first name: ");
-            userFirstName = scan1.nextLine();
+            userFirstName = scan2.nextLine();
             
             System.out.println("Enter your last name: ");
-            userLastName = scan1.nextLine();
+            userLastName = scan2.nextLine();
             
             System.out.println("Username MUST contain at least one digit (0-9). Enter username:");
-            username = scan1.nextLine();
+            username = scan2.nextLine();
             
             System.out.println("Choose a password. It must contain at least one special character (! @ # $ % ^ & * or ?) Enter password:");
-            password = scan1.nextLine();
+            password = scan2.nextLine();
             
             
             if ((checkCredentials(username,password))&&(countUsers==0)) {  //if credentials are valid, store in array
-                        credentialsArray[0] = userFirstName;
-                        credentialsArray[1] = userLastName;
-                        credentialsArray[2] = username;
-                        credentialsArray[3] = password;
-                        countUsers++;
-            } else if ((countUsers==1)) {
-                        credentialsArray[4] = userFirstName;
-                        credentialsArray[5] = userLastName;
-                        credentialsArray[6] = username;
-                        credentialsArray[7] = password;
-                        countUsers++;
-            } else if ((countUsers==2)) {
-                        credentialsArray[8] = userFirstName;
-                        credentialsArray[9] = userLastName;
-                        credentialsArray[10] = username;
-                        credentialsArray[11] = password;
-                        countUsers++;
+                  credentialsArray[0] = userFirstName;
+                  credentialsArray[1] = userLastName;
+                  credentialsArray[2] = username;
+                  credentialsArray[3] = password;
+                  countUsers++;
             } else {
                   countAttempts++;
                   if (countAttempts<3){
@@ -200,84 +211,167 @@ public class menuImplemented {
             CreateMovie movie6 = new CreateMovie("A Quiet Place", 2018, formatMovieDuration(90), "Horror", 7.6);
             CreateMovie movie7 = new CreateMovie("The Grudge", 2004, formatMovieDuration(91), "Horror", 5.9);
             CreateMovie movie8 = new CreateMovie("The Silence of the Lambs", 1991, formatMovieDuration(118), "Horror", 8.6);
-            CreateMovie movie9 = new CreateMovie("Let the Right One In", 2008, formatMovieDuration(114), "Horror", 7.9);
-            CreateMovie movie10 = new CreateMovie("Anastasia", 1997, formatMovieDuration(94), "Anime", 7.1);
-            CreateMovie movie11 = new CreateMovie("Ratatouille", 2007, formatMovieDuration(111), "Anime", 8.0);
-            CreateMovie movie12 = new CreateMovie("Kiki's Delivery Service", 1989, formatMovieDuration(103), "Anime", 7.9);
-            CreateMovie movie13 = new CreateMovie("50 First Dates", 2004, formatMovieDuration(99), "Comedy", 6.8 );
-            CreateMovie movie14 = new CreateMovie("Ace Ventura: Pet Detective", 1994, formatMovieDuration(86), "Comedy", 6.9);
-            CreateMovie movie15 = new CreateMovie("Wonder Woman", 2017, formatMovieDuration(141), "Action", 7.5 );
-            CreateMovie movie16 = new CreateMovie("Aquaman", 2018, formatMovieDuration(143), "Action", 7.2);
-            CreateMovie movie17 = new CreateMovie("Deadpool", 2016, formatMovieDuration(108), "Action", 8.0);
-            CreateMovie movie18 = new CreateMovie("The Fifth Element", 1997, formatMovieDuration(126), "Action", 7.7 );
-            myMovieArray = new CreateMovie[] {movie1, movie2, movie3, movie4, movie5, movie6, movie7, movie8, movie9, movie10, movie11, movie12, movie13, movie14, movie15, movie16, movie17, movie18};
+            CreateMovie movie9 = new CreateMovie("Ratatouille", 2007, formatMovieDuration(111), "Anime", 8.0);
+            CreateMovie movie10 = new CreateMovie("Kiki's Delivery Service", 1989, formatMovieDuration(103), "Anime", 7.9);
+            CreateMovie movie11 = new CreateMovie("50 First Dates", 2004, formatMovieDuration(99), "Comedy", 6.8 );
+            CreateMovie movie12 = new CreateMovie("Ace Ventura: Pet Detective", 1994, formatMovieDuration(86), "Comedy", 6.9);
+            CreateMovie movie13 = new CreateMovie("Wonder Woman", 2017, formatMovieDuration(141), "Action", 7.5 );
+            CreateMovie movie14 = new CreateMovie("Aquaman", 2018, formatMovieDuration(143), "Action", 7.2);
+            CreateMovie movie15 = new CreateMovie("Deadpool", 2016, formatMovieDuration(108), "Action", 8.0);
+            CreateMovie movie16 = new CreateMovie("The Fifth Element", 1997, formatMovieDuration(126), "Action", 7.7 );
+            myMovieArray = new CreateMovie[] {movie1, movie2, movie3, movie4, movie5, movie6, movie7, movie8, movie9, movie10,
+                    movie11, movie12, movie13, movie14, movie15, movie16};
             
       }
       
       public static void watchMovie(){
-            
-            
-            for (int i = 0; i<18; i++ ){  //prints array
-                  String s ="\t" + i + ".\t'" + (myMovieArray[i].getMovieTitle()) +
+            for (int i = 0; i<16; i++ ){  //prints array
+                  int j=i+1;
+                  String s ="\t" + j + ". '" + (myMovieArray[i].getMovieTitle()) +
                           "', (" +(myMovieArray[i].getMovieReleaseYear()) +
                           "). Duration: " + (myMovieArray[i].getMovieDuration()) +
                           " Genre: " + (myMovieArray[i].getMovieGenre()) +
                           ", Rating: " + (myMovieArray[i].getMovieRating()) + "/10";
                   System.out.println(s);
             }
-            System.out.println("\nWould you like to search for a movie by title (ENTER 1) or by genre(ENTER 2)?");
+            
+            System.out.println("\nWould you like to search for a movie by title (ENTER 1) or by genre(ENTER 2)? +"
+                    + " \nPress any other number to exit back to main menu");
             int searchByValue = scan1.nextInt();
-            while (searchByValue ==2) {
-                  scan1.nextLine();
-                  System.out.println("\nEnter the title you would like to search for: ");
-                  String titleSearched = scan1.nextLine();
-                  int movieIndex = searchMovie(titleSearched);
-      
-                  if (movieIndex<18) {
-                        System.out.println("movieIndex variable returned by searchMovie: " + movieIndex);
-                        CreateMovie temp = myMovieArray[movieIndex];
-                        //create shallow copy & replace variables below in push methods
-            
-                        //horror, comedy, action, anime
-                        if (temp.getMovieGenre().equals("Horror")) {
-                              genreArray[0]++;
-                        } else if (temp.getMovieGenre().equals("Comedy")) {
-                              genreArray[1]++;
-                        } else if (temp.getMovieGenre().equals("Action")) {
-                              genreArray[2]++;
-                        } else if (temp.getMovieGenre().equals("Anime")) {
-                              genreArray[3]++;
+            if (searchByValue ==1) {  //SEARCH BY TITLE BEGINS
+                  while (searchByValue ==1) {
+                        //scan1.nextLine(); //throws aways scanner pause
+                        System.out.println("\nEnter the complete title you would like to search for: ");
+                        String titleSearched = scan2.nextLine(); //saves user input
+                        int movieIndex = searchByTitle(titleSearched); //int returned by method stored as index of movie
+                        if (movieIndex==20){
+                              System.out.println("No search results found. Please try searching for another title.");
+                              String searchAgain = scan2.nextLine();
+                              movieIndex = searchByTitle(searchAgain); //does this return to process as normal??
+                              
+                        } else {
+                              System.out.println("Search Results found: " + myMovieArray[movieIndex].getMovieTitle()+
+                                      " (" + myMovieArray[movieIndex].getMovieReleaseYear()+")");
+                              
+                              System.out.println("Genre counter" + genreArray); //debugging purposes
+                              System.out.println("Would you like to watch this movie[Enter 1] or search again[Enter 2]?");
+                              int optionToWatchOrExit = scan1.nextInt();
+                              if (optionToWatchOrExit ==1) {
+                                    
+                                    pushMovie(movieIndex);   //MOVIE HAS BEEN WATCHED
+                                    
+                              } else if (optionToWatchOrExit !=1) {
+                                    // SEARCH AGAIN **
+                              }
                         }
-            
-                        //countMovieTitle(accepts movie object;
-                        System.out.println("You have watched: " + temp.getMovieTitle());
-                        arrayStack.push(temp); //adds to stack
-                        circularQueue.offer(temp);  //adds to queue
-            
                   }
-                  
+            } else if (searchByValue==2) {  //SEARCH BY GENRE BEGINS
+                  int optionToWatchOrExit=0;
+                  while (searchByValue==2|| optionToWatchOrExit==2) {
+                        System.out.println("\nEnter the genre you would like to search for: ");
+                        String genreSearched = scan2.nextLine();
+                        printGenreResults(genreSearched);
+                        
+                        System.out.println("\nWould you like to watch any movie[Enter 1] from this list or search again[Press 2]? "
+                                + "\nPress any other number to exit to main menu.");
+                        optionToWatchOrExit = scan1.nextInt();
+                        if (optionToWatchOrExit ==1) { //user will next select a movie to watch
+                              System.out.println("\nEnter the complete title you would like to watch from this list: ");
+                              String titleSearched = scan2.nextLine(); //saves user title to watch
+                              int movieIndex = searchByTitle(titleSearched);
+                              System.out.println("movieIndex: "+ movieIndex);//int returned by method stored as index of movie
+                              pushMovie(movieIndex);
+                        } else if (optionToWatchOrExit==2) {
+                              //returns to while loop
+                        } else {
+                              break;
+                        }
+                  }
+            }
+      }//ends mmovieWatch method
+      
+      public static void pushMovie(int movieIndex){
+            CreateMovie temp = myMovieArray[movieIndex]; //create shallow copy
+            arrayStack.push(temp); //adds to stack
+            circularQueue.offer(temp);  //adds to queue
+            countMovieTitle(temp);  //counts times movie was watched
+            //this if statement increments genre array counter
+            //horror, comedy, action, anime
+            if (temp.getMovieGenre().equals("Horror")) {
+                  genreArray[0]++;
+            } else if (temp.getMovieGenre().equals("Comedy")) {
+                  genreArray[1]++;
+            } else if (temp.getMovieGenre().equals("Action")) {
+                  genreArray[2]++;
+            } else if (temp.getMovieGenre().equals("Anime")) {
+                  genreArray[3]++;
+            }
+            System.out.println("You have watched: " + temp.getMovieTitle());
+      }
+      
+      
+      public static void printGenreResults(String genreSearched) {
+            int j = 0;
+            for (int i=0; i<myMovieArray.length; i++) {
+                  if (genreSearched.equals(myMovieArray[i].getMovieGenre()) ) { //boolean genre was found
+                        // if the movie has genre"searched", add the mymovie array index to the movies
+                        // per genre array
+                        
+                        moviesPerGenre[j] = i;
+                        j++;
+                        
+                        System.out.println("Search Results found: " + myMovieArray[i].getMovieGenre() + ", Title: " +
+                                myMovieArray[i].getMovieTitle()+"(" + myMovieArray[i].getMovieReleaseYear()+ ")");
+                  }
             }
       }
       
-      public static int searchMovie(String titleSearched) {
-            int movieIndex = 0;
+      public static int searchByTitle(String titleSearched) {
+            int movieIndex=0;
             for (int i =0; i<myMovieArray.length; i++) {
-                  if (titleSearched.toLowerCase().equals(myMovieArray[i].getMovieTitle().toLowerCase())) {
-                        System.out.print("Movies found: " + myMovieArray[i].getMovieTitle());
-                        movieIndex = i;
+                  if (titleSearched.equals(myMovieArray[i].getMovieTitle())) {
+                        return movieIndex= i;
                   } else {
-                        movieIndex=0;
+                        System.out.println("The movie could not be found, try again");
                   }
             }
             return movieIndex;
       }
       
-      public void countMovieTitle(CreateMovie movie) {
-            //create global array to countMovies watched
-            //string temp = movie.getMOvieTitle();
-            //bunch of switch statements
-            
-            
+      public static void countMovieTitle(CreateMovie movie) {
+            if (movie.getMovieTitle().equals("Get Out")) {
+                  watchedMovieArray[0]++;
+            } else if (movie.getMovieTitle().equals("Spirited Away")) {
+                  genreArray[1]++;
+            } else if (movie.getMovieTitle().equals("Legally Blonde")) {
+                  genreArray[2]++;
+            } else if (movie.getMovieTitle().equals("The Addams Family")) {
+                  genreArray[3]++;
+            } else if (movie.getMovieTitle().equals("Pikachu's Vacation")) {
+                  genreArray[4]++;
+            }else if (movie.getMovieTitle().equals("A Quiet Place")) {
+                  genreArray[5]++;
+            }else if (movie.getMovieTitle().equals("The Grudge")) {
+                  genreArray[6]++;
+            }else if (movie.getMovieTitle().equals("The Silence of the Lambs")) {
+                  genreArray[7]++;
+            }else if (movie.getMovieTitle().equals("Ratatouille")) {
+                  genreArray[8]++;
+            }else if (movie.getMovieTitle().equals("Kiki's Delivery Service")) {
+                  genreArray[9]++;
+            }else if (movie.getMovieTitle().equals("50 First Dates")) {
+                  genreArray[10]++;
+            }else if (movie.getMovieTitle().equals("Ace Ventura: Pet Detective")) {
+                  genreArray[11]++;
+            }else if (movie.getMovieTitle().equals("Wonder Woman")) {
+                  genreArray[12]++;
+            }else if (movie.getMovieTitle().equals("Aquaman")) {
+                  genreArray[13]++;
+            }else if (movie.getMovieTitle().equals("Deadpool")) {
+                  genreArray[14]++;
+            }else if (movie.getMovieTitle().equals("The Fifth Element")) {
+                  genreArray[15]++;
+            }
       }
       
       public void printStack() { //

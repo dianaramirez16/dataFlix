@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6aea0c33-ef5b-41ca-915c-889fe226713c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ArrayStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ArrayStack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menuImplemented.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuImplemented.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,11 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ArrayStack.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+            <state relative-caret-position="204">
+              <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -68,19 +67,15 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/menuImplemented.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="162" column="29" lean-forward="true" selection-start-line="162" selection-start-column="29" selection-end-line="162" selection-end-column="29" />
+            <state relative-caret-position="255">
+              <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
               <folding>
-                <element signature="e#0#9975#0" expanded="true" />
+                <element signature="e#0#21590#0" expanded="true" />
                 <element signature="imports" expanded="true" />
-                <element signature="method#printMenu#0;class#menuImplemented#0" />
-                <element signature="method#collectCredentials#0;class#menuImplemented#0" />
-                <element signature="method#formatMovieDuration#0;class#menuImplemented#0" />
-                <element signature="method#createMovies#0;class#menuImplemented#0" />
-                <element signature="method#countMovieTitle#0;class#menuImplemented#0" />
+                <element signature="method#countMovieTitle#0;class#DataFlix#0" />
                 <element signature="method#printStack#0;class#menuImplemented#0" />
                 <element signature="method#printQueue#0;class#menuImplement#0" />
               </folding>
@@ -135,8 +130,8 @@
         <option value="$PROJECT_DIR$/src/bareBonesStack.java" />
         <option value="$PROJECT_DIR$/src/CreateMovie.java" />
         <option value="$PROJECT_DIR$/src/CircularQueue.java" />
-        <option value="$PROJECT_DIR$/src/menuImplemented.java" />
         <option value="$PROJECT_DIR$/src/ArrayStack.java" />
+        <option value="$PROJECT_DIR$/src/menuImplemented.java" />
       </list>
     </option>
   </component>
@@ -154,7 +149,7 @@
     <panes />
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553644135722" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553662501713" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
@@ -219,7 +214,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" x="41" y="37" width="835" height="988" id="Run" order="2" type="FLOATING" visible="true" weight="0.32905483" />
+      <window_info anchor="bottom" x="41" y="37" width="835" height="988" id="Run" order="2" type="FLOATING" weight="0.32905483" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3990665" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -282,28 +277,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/menuImplemented.java">
+    <entry file="file://$PROJECT_DIR$/src/ArrayStack.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="162" column="29" lean-forward="true" selection-start-line="162" selection-start-column="29" selection-end-line="162" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#9975#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="method#printMenu#0;class#menuImplemented#0" />
-            <element signature="method#collectCredentials#0;class#menuImplemented#0" />
-            <element signature="method#formatMovieDuration#0;class#menuImplemented#0" />
-            <element signature="method#createMovies#0;class#menuImplemented#0" />
-            <element signature="method#countMovieTitle#0;class#menuImplemented#0" />
-            <element signature="method#printStack#0;class#menuImplemented#0" />
-            <element signature="method#printQueue#0;class#menuImplement#0" />
-          </folding>
+        <state relative-caret-position="204">
+          <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ArrayStack.java">
+    <entry file="file://$PROJECT_DIR$/src/menuImplemented.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+        <state relative-caret-position="255">
+          <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#21590#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#countMovieTitle#0;class#DataFlix#0" />
+            <element signature="method#printStack#0;class#menuImplemented#0" />
+            <element signature="method#printQueue#0;class#menuImplement#0" />
+          </folding>
         </state>
       </provider>
     </entry>
