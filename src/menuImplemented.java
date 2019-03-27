@@ -19,8 +19,8 @@ public class menuImplemented {
       static Scanner scan2 = new Scanner(System.in); //global string scanner
       static String username, password;
       static CreateMovie[] myMovieArray; //holds movie objects
-      static ArrayStack arrayStack; //stack
-      static CircularQueue circularQueue; //queue
+      static ArrayStack<CreateMovie> arrayStack= new ArrayStack<>(); //stack
+      static CircularQueue circularQueue = new CircularQueue(); //queue
       static int countUsers=0, countAttempts=0;
       static String credentialsArray[] = new String[4];
       static int[] genreArray = new int[4]; //horror, comedy, action, anime
@@ -244,24 +244,21 @@ public class menuImplemented {
                         System.out.println("\nEnter the complete title you would like to search for: ");
                         String titleSearched = scan2.nextLine(); //saves user input
                         int movieIndex = searchByTitle(titleSearched); //int returned by method stored as index of movie
-                        if (movieIndex==20){
+                        if (movieIndex>16){
                               System.out.println("No search results found. Please try searching for another title.");
-                              String searchAgain = scan2.nextLine();
-                              movieIndex = searchByTitle(searchAgain); //does this return to process as normal??
-                              
+                              break;
                         } else {
                               System.out.println("Search Results found: " + myMovieArray[movieIndex].getMovieTitle()+
                                       " (" + myMovieArray[movieIndex].getMovieReleaseYear()+")");
                               
-                              System.out.println("Genre counter" + genreArray); //debugging purposes
-                              System.out.println("Would you like to watch this movie[Enter 1] or search again[Enter 2]?");
+                              System.out.println("Would you like to watch this movie[Enter 1] or exit back to main menu [enter any other number] ?");
                               int optionToWatchOrExit = scan1.nextInt();
                               if (optionToWatchOrExit ==1) {
                                     
                                     pushMovie(movieIndex);   //MOVIE HAS BEEN WATCHED
                                     
                               } else if (optionToWatchOrExit !=1) {
-                                    // SEARCH AGAIN **
+                                    break;
                               }
                         }
                   }
@@ -288,25 +285,24 @@ public class menuImplemented {
                         }
                   }
             }
-      }//ends mmovieWatch method
+      }//ends movie Watch method
       
       public static void pushMovie(int movieIndex){
-            CreateMovie temp = myMovieArray[movieIndex]; //create shallow copy
-            arrayStack.push(temp); //adds to stack
-            circularQueue.offer(temp);  //adds to queue
-            countMovieTitle(temp);  //counts times movie was watched
+            arrayStack.push(myMovieArray[movieIndex]); //adds to stack
+            circularQueue.offer(myMovieArray[movieIndex]);  //adds to queue
+            countMovieTitle(myMovieArray[movieIndex]);  //counts times movie was watched
             //this if statement increments genre array counter
             //horror, comedy, action, anime
-            if (temp.getMovieGenre().equals("Horror")) {
+            if (myMovieArray[movieIndex].getMovieGenre().equals("Horror")) {
                   genreArray[0]++;
-            } else if (temp.getMovieGenre().equals("Comedy")) {
+            } else if (myMovieArray[movieIndex].getMovieGenre().equals("Comedy")) {
                   genreArray[1]++;
-            } else if (temp.getMovieGenre().equals("Action")) {
+            } else if (myMovieArray[movieIndex].getMovieGenre().equals("Action")) {
                   genreArray[2]++;
-            } else if (temp.getMovieGenre().equals("Anime")) {
+            } else if (myMovieArray[movieIndex].getMovieGenre().equals("Anime")) {
                   genreArray[3]++;
             }
-            System.out.println("You have watched: " + temp.getMovieTitle());
+            System.out.println("You have watched: " + myMovieArray[movieIndex].getMovieTitle());
       }
       
       
@@ -331,8 +327,6 @@ public class menuImplemented {
             for (int i =0; i<myMovieArray.length; i++) {
                   if (titleSearched.equals(myMovieArray[i].getMovieTitle())) {
                         return movieIndex= i;
-                  } else {
-                        System.out.println("The movie could not be found, try again");
                   }
             }
             return movieIndex;

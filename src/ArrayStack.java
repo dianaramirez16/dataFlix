@@ -9,7 +9,7 @@
   *  |   watching patterns from user input.                 |
   *  ╘══════════════════════════════════════════════════════╛
   */
- public class ArrayStack {
+ public class ArrayStack <E> {
       
        // Storage for the Stack
       
